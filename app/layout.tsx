@@ -34,6 +34,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${displayFont.variable} ${codeFont.variable}`}>
       <body className="antialiased">
+        <a
+          href="#main-content"
+          className="sr-only fixed top-4 left-4 z-50 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-lg focus:not-sr-only"
+        >
+          Skip to main content
+        </a>
         <div className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
           <div
             className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,hsl(var(--primary)/0.12),transparent_40%),radial-gradient(circle_at_85%_5%,hsl(var(--accent)/0.15),transparent_30%),radial-gradient(circle_at_30%_90%,hsl(var(--secondary)/0.24),transparent_35%)]"

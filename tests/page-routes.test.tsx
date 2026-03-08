@@ -29,7 +29,7 @@ describe("route pages", () => {
   it("renders projects page content", async () => {
     render(await ProjectsPage());
     expect(screen.getByRole("heading", { name: "Projects" })).toBeInTheDocument();
-    expect(screen.getByText(/Systems, products/)).toBeInTheDocument();
+    expect(screen.getByText(/Public repositories and shipped systems work/)).toBeInTheDocument();
   });
 
   it("renders resume page content", async () => {

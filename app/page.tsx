@@ -74,7 +74,7 @@ export default async function HomePage() {
 
         <Section
           heading="About me"
-          description="A high-agency builder profile. Human first, execution oriented, and operationally practical."
+          description="A high-agency operator profile grounded in enterprise architecture, reliability, and public restraint."
         >
           <MarkdownView content={homeCopy} className="prose prose-invert max-w-none" />
         </Section>
@@ -92,7 +92,7 @@ export default async function HomePage() {
           </div>
         </Section>
 
-        <Section heading="Selected work" description="A few recent public projects and systems work.">
+        <Section heading="Selected work" description="Public repositories and systems work I can discuss openly. Private code stays off the site.">
           <div className="grid gap-4 md:grid-cols-3">
             {featuredProjects.map((project) => (
               <Card key={project.id} className="space-y-4 p-5" variant="accent">

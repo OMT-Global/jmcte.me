@@ -21,7 +21,7 @@ export default async function ProjectsPage() {
     <div className="space-y-8">
       <Section
         heading="Projects"
-        description="Systems, products, and infrastructure work I have shipped or currently own."
+        description="Public repositories and shipped systems work I can discuss openly. Private client and internal code stay off the public site."
       />
       <ProjectGrid projects={projects} />
     </div>

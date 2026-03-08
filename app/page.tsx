@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ArrowUpRight, FileText, Globe, UserRound } from "lucide-react";
 import type { Metadata } from "next";
 import { loadHomeCopy, loadProfile, loadProjects } from "@/lib/content";
 import { MarkdownView } from "@/components/markdown-view";
@@ -7,9 +6,18 @@ import { Section } from "@/components/section";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { PersonStructuredData, ProjectsStructuredData } from "@/components/structured-data";
+import {
+  ArrowUpRightIcon,
+  FileTextIcon,
+  GithubIcon,
+  LockIcon,
+  UserIcon
+} from "@/components/icons/animated";
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: {
+    absolute: "John M. TenEyck Jr. | JMCTE"
+  },
   description: "Home page for the jmcte.me portfolio."
 };
 
@@ -20,20 +28,7 @@ export default async function HomePage() {
     loadHomeCopy()
   ]);
   const featuredProjects = projectsPayload.projects.filter((project) => project.featured);
-  const publicSurfaceItems = [
-    ...profile.socials.map((social) => ({
-      label: social.label,
-      url: social.url,
-      handle: social.handle,
-      external: true
-    })),
-    {
-      label: "Profile JSON",
-      url: "/profile.json",
-      handle: "Machine-readable profile",
-      external: false
-    }
-  ];
+  const githubProfile = profile.socials.find((social) => social.label === "GitHub");
 
   return (
     <>
@@ -56,17 +51,17 @@ export default async function HomePage() {
               className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-primary-foreground transition hover:brightness-105"
             >
               See projects
-              <ArrowUpRight className="h-4 w-4" />
+              <ArrowUpRightIcon size={16} className="shrink-0" aria-hidden />
             </Link>
             <Link
               href="/about"
               className="inline-flex items-center gap-2 rounded-full border border-border/70 px-5 py-2.5 transition hover:bg-card"
             >
-              <UserRound className="h-4 w-4" />
+              <UserIcon size={16} className="shrink-0" aria-hidden />
               About
             </Link>
             <Link href="/resume" className="inline-flex items-center gap-2 rounded-full border border-border/70 px-5 py-2.5 transition hover:bg-card">
-              <FileText className="h-4 w-4" />
+              <FileTextIcon size={16} className="shrink-0" aria-hidden />
               Resume
             </Link>
           </div>
@@ -110,23 +105,40 @@ export default async function HomePage() {
           </div>
         </Section>
 
-        <Section heading="Public surface" description="Minimal public footprint. No public inbox; published material only.">
+        <Section heading="Public channels" description="Human-facing links only: public code and operating policy.">
           <div className="grid gap-3 sm:grid-cols-2">
-            {publicSurfaceItems.map((item) => (
+            {githubProfile ? (
               <a
-                key={item.label}
-                href={item.url}
-                target={item.external ? "_blank" : undefined}
-                rel={item.external ? "noreferrer" : undefined}
+                href={githubProfile.url}
+                target="_blank"
+                rel="noreferrer"
                 className="group flex items-center justify-between rounded-2xl border border-border/60 bg-card/70 px-4 py-3 transition hover:border-primary/40 hover:bg-card"
               >
                 <div className="space-y-1">
-                  <p className="font-semibold">{item.label}</p>
-                  <p className="text-sm text-muted-foreground">{item.handle}</p>
+                  <p className="font-semibold">GitHub</p>
+                  <p className="text-sm text-muted-foreground">{githubProfile.handle}</p>
                 </div>
-                <Globe className="h-4 w-4 text-muted-foreground group-hover:text-primary" />
+                <GithubIcon
+                  size={18}
+                  className="text-muted-foreground group-hover:text-primary"
+                  aria-hidden
+                />
               </a>
-            ))}
+            ) : null}
+            <Link
+              href="/contact"
+              className="group flex items-center justify-between rounded-2xl border border-border/60 bg-card/70 px-4 py-3 transition hover:border-primary/40 hover:bg-card"
+            >
+              <div className="space-y-1">
+                <p className="font-semibold">Access policy</p>
+                <p className="text-sm text-muted-foreground">Low-profile public surface and private inbound channels.</p>
+              </div>
+              <LockIcon
+                size={18}
+                className="text-muted-foreground group-hover:text-primary"
+                aria-hidden
+              />
+            </Link>
           </div>
         </Section>
       </section>

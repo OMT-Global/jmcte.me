@@ -1,27 +1,27 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { loadProfile } from "@/lib/content";
-import { FileText, Globe, Shield } from "lucide-react";
+import { GithubIcon, LockIcon } from "@/components/icons/animated";
 
 export const metadata: Metadata = {
   title: "Access",
-  description: "Public access policy and published references for jmcte.me."
+  description: "Public access policy for jmcte.me."
 };
 
 export default async function ContactPage() {
   const profile = await loadProfile();
+  const githubProfile = profile.socials.find((social) => social.label === "GitHub");
 
   return (
     <div className="space-y-6">
       <h1 className="text-4xl font-semibold">Access</h1>
       <p className="max-w-xl text-sm text-muted-foreground">
-        I keep direct communication private. Public material here is intentionally limited to published work,
-        machine-readable references, and a minimal operating surface.
+        I keep direct communication private. Public material here is intentionally limited to published work
+        and a minimal operating surface.
       </p>
-      <section className="grid gap-4 sm:grid-cols-2">
+      <section className="grid gap-4 md:grid-cols-2">
         <div className="rounded-2xl border border-border/60 bg-card/80 p-5">
           <div className="mb-2 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary/15 text-primary">
-            <Shield className="h-5 w-5" />
+            <LockIcon size={20} aria-hidden />
           </div>
           <p className="font-semibold">Operating posture</p>
           <p className="text-sm text-muted-foreground">
@@ -30,33 +30,24 @@ export default async function ContactPage() {
           </p>
         </div>
 
-        <div className="rounded-2xl border border-border/60 bg-card/80 p-5">
-          <div className="mb-2 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-accent/20 text-accent-foreground">
-            <FileText className="h-5 w-5" />
-          </div>
-          <p className="font-semibold">Published references</p>
-          <p className="text-sm text-muted-foreground">
-            Public JSON: <Link href="/profile.json">/profile.json</Link>,{" "}
-            <Link href="/projects.json">/projects.json</Link>, <Link href="/resume.json">/resume.json</Link>
-          </p>
-          <p className="mt-2 text-xs text-muted-foreground">
-            Security contact policy: <Link href="/contact">/contact</Link>
-          </p>
-        </div>
-        <div className="space-y-3">
-          {profile.socials.map((social) => (
-            <a
-              key={social.label}
-              href={social.url}
-              target="_blank"
-              rel="noreferrer"
-              className="block rounded-2xl border border-border/60 bg-card/80 p-4 transition hover:border-primary/40 hover:bg-card"
-            >
-              <p className="font-semibold">{social.label}</p>
-              <p className="text-sm text-muted-foreground">{social.handle}</p>
-            </a>
-          ))}
-        </div>
+        {githubProfile ? (
+          <a
+            href={githubProfile.url}
+            target="_blank"
+            rel="noreferrer"
+            className="block rounded-2xl border border-border/60 bg-card/80 p-5 transition hover:border-primary/40 hover:bg-card"
+          >
+            <div className="mb-2 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-accent/20 text-accent-foreground">
+              <GithubIcon size={20} aria-hidden />
+            </div>
+            <p className="font-semibold">Public code</p>
+            <p className="text-sm text-muted-foreground">
+              Open-source work is published on GitHub. Internal systems, private repositories, and direct
+              correspondence stay off the public surface.
+            </p>
+            <p className="mt-2 text-xs text-muted-foreground">{githubProfile.handle}</p>
+          </a>
+        ) : null}
       </section>
     </div>
   );

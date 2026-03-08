@@ -1,18 +1,16 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteShell } from "@/components/layout/site-shell";
 import "@/app/globals.css";
 
-const displayFont = Space_Grotesk({
-  subsets: ["latin"],
+const displayFont = Geist({
   variable: "--font-display",
   display: "swap"
 });
 
-const codeFont = JetBrains_Mono({
-  subsets: ["latin"],
+const codeFont = Geist_Mono({
   variable: "--font-code",
   display: "swap"
 });

@@ -1,11 +1,11 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { ArrowUpRight } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import type { ProjectPayload } from "@/lib/types";
 import { cn } from "@/lib/utils";
+import { ArrowUpRightIcon } from "@/components/icons/animated";
 
 type ProjectFilter = "all" | "featured" | "completed" | "active";
 
@@ -56,7 +56,7 @@ function ProjectCard({
             className="inline-flex items-center gap-2 text-sm text-foreground transition hover:text-primary"
           >
             Visit
-            <ArrowUpRight className="h-4 w-4" />
+            <ArrowUpRightIcon size={16} className="shrink-0" aria-hidden />
           </a>
         ) : null}
         {project.github ? (
@@ -68,7 +68,7 @@ function ProjectCard({
             className="inline-flex items-center gap-2 text-sm text-muted-foreground transition hover:text-foreground"
           >
             Source
-            <ArrowUpRight className="h-4 w-4" />
+            <ArrowUpRightIcon size={16} className="shrink-0" aria-hidden />
           </a>
         ) : null}
       </div>

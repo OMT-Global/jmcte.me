@@ -3,10 +3,13 @@ import { describe, expect, it } from "vitest";
 import ContactPage from "@/app/contact/page";
 
 describe("contact page", () => {
-  it("does not expose direct email and uses rel=noreferrer on outbound links", async () => {
+  it("does not expose direct email or human-facing JSON links and uses rel=noreferrer on outbound links", async () => {
     render(await ContactPage());
     const links = screen.getAllByRole("link");
     expect(links.some((link) => (link.getAttribute("href") ?? "").startsWith("mailto:"))).toBe(false);
+    expect(screen.queryByText("/profile.json")).not.toBeInTheDocument();
+    expect(screen.queryByText("/projects.json")).not.toBeInTheDocument();
+    expect(screen.queryByText("/resume.json")).not.toBeInTheDocument();
     const externalLinks = links.filter((link) => {
       const href = link.getAttribute("href") ?? "";
       return href.startsWith("https://") || href.startsWith("http://");

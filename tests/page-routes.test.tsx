@@ -14,6 +14,7 @@ describe("route pages", () => {
       })
     ).toBeInTheDocument();
     expect(screen.getByText("Professional Portfolio")).toBeInTheDocument();
+    expect(screen.queryByText("Profile JSON")).not.toBeInTheDocument();
   });
 
   it("renders about page content", async () => {

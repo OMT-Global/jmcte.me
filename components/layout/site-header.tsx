@@ -1,12 +1,18 @@
 import Link from "next/link";
-import { Home, Briefcase, UserRound, FileText, Shield } from "lucide-react";
+import {
+  FileTextIcon,
+  FolderKanbanIcon,
+  HomeIcon,
+  ShieldCheckIcon,
+  UserIcon
+} from "@/components/icons/animated";
 
 const navItems = [
-  { href: "/", label: "Home", icon: Home },
-  { href: "/about", label: "About", icon: UserRound },
-  { href: "/projects", label: "Projects", icon: Briefcase },
-  { href: "/resume", label: "Resume", icon: FileText },
-  { href: "/contact", label: "Access", icon: Shield }
+  { href: "/", label: "Home", icon: HomeIcon },
+  { href: "/about", label: "About", icon: UserIcon },
+  { href: "/projects", label: "Projects", icon: FolderKanbanIcon },
+  { href: "/resume", label: "Resume", icon: FileTextIcon },
+  { href: "/contact", label: "Access", icon: ShieldCheckIcon }
 ];
 
 export function SiteHeader() {
@@ -27,7 +33,7 @@ export function SiteHeader() {
                     aria-label={item.label}
                     className="inline-flex items-center gap-2 rounded-full border border-transparent px-3 py-2 text-sm transition hover:border-primary/40 hover:bg-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                   >
-                    <Icon className="h-4 w-4" aria-hidden />
+                    <Icon size={16} className="shrink-0" aria-hidden />
                     <span className="sr-only sm:not-sr-only">{item.label}</span>
                   </Link>
                 </li>

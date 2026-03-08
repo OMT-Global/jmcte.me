@@ -1,6 +1,6 @@
 # About
 
-I have spent more than three decades helping large organizations modernize how they build, secure, and operate technology, with emphasis on:
+I have spent more than three decades helping large organizations modernize how they build, secure, and operate technology. My public background spans leadership roles at USAA, Honeywell, LSG Sky Chefs, and Accenture, with emphasis on:
 
 - Enterprise architecture and IT governance
 - Reliability, quality assurance, and operational resilience
@@ -8,6 +8,6 @@ I have spent more than three decades helping large organizations modernize how t
 
 Recent highlights include:
 
-- Led USAA’s interim CIO role for Property & Casualty, managing a $700M technology budget and 1,200-person organization.
-- Directed transformation programs and architecture practices across global, regulated environments.
-- Rebuilt testing and quality operations to cut spend, harden delivery, and improve outcomes at enterprise scale.
+- Led enterprise technology architecture at USAA, including large-scale architecture leadership, reliability practices, and executive talent development.
+- Served as interim CIO for USAA Property & Casualty, with accountability for a $700M technology budget and a 1,200-person organization.
+- Rebuilt testing, governance, and modernization programs to cut waste, harden delivery, and improve outcomes at enterprise scale.

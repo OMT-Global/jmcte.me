@@ -19,7 +19,7 @@ export default async function ResumePage() {
 
   return (
     <div className="space-y-10">
-      <Section heading="Resume" description="Condensed overview of professional background." />
+      <Section heading="Resume" description="Selected executive and technical roles from a 30+ year career." />
 
       <section className="space-y-4">
         <h3 className="text-xl font-semibold">Experience</h3>

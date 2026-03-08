@@ -39,6 +39,14 @@
     @apply outline-offset-4;
   }
 
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    @apply rounded-md ring-2 ring-ring ring-offset-2 ring-offset-background outline-none;
+  }
+
   h1,
   h2,
   h3,

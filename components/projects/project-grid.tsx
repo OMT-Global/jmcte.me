@@ -9,6 +9,19 @@ import { cn } from "@/lib/utils";
 
 type ProjectFilter = "all" | "featured" | "completed" | "active";
 
+function getProjectExcerpt(details?: string) {
+  if (!details) {
+    return "";
+  }
+
+  const excerpt = details
+    .split("\n")
+    .map((line) => line.trim())
+    .find((line) => line.length > 0 && !line.startsWith("#") && !line.startsWith("-"));
+
+  return excerpt ?? "";
+}
+
 function ProjectCard({
   project
 }: {
@@ -25,7 +38,7 @@ function ProjectCard({
         </div>
         <p className="text-sm text-muted-foreground">{project.summary}</p>
       </div>
-      <p className="text-sm text-muted-foreground">{project.details ? project.details.split("\n")[0] : ""}</p>
+      <p className="text-sm text-muted-foreground">{getProjectExcerpt(project.details)}</p>
       <div className="flex flex-wrap gap-2">
         {project.stack.map((item) => (
           <Badge key={item} variant="outline">
@@ -39,6 +52,7 @@ function ProjectCard({
             href={project.url}
             target="_blank"
             rel="noreferrer"
+            aria-label={`Visit ${project.title}`}
             className="inline-flex items-center gap-2 text-sm text-foreground transition hover:text-primary"
           >
             Visit
@@ -50,6 +64,7 @@ function ProjectCard({
             href={project.github}
             target="_blank"
             rel="noreferrer"
+            aria-label={`Source for ${project.title}`}
             className="inline-flex items-center gap-2 text-sm text-muted-foreground transition hover:text-foreground"
           >
             Source
@@ -86,6 +101,7 @@ export default function ProjectGrid({
     { key: "active", label: "Active" },
     { key: "completed", label: "Completed" }
   ] as const;
+  const projectCountLabel = `${visibleProjects.length} public project${visibleProjects.length === 1 ? "" : "s"} shown`;
 
   return (
     <section className="space-y-6">
@@ -97,6 +113,7 @@ export default function ProjectGrid({
               key={filterOption.key}
               type="button"
               aria-pressed={isActive}
+              aria-controls="project-results-grid"
               onClick={() => setStatusFilter(filterOption.key)}
               className={cn(
                 "rounded-full px-4 py-2 text-sm font-semibold transition",
@@ -111,7 +128,11 @@ export default function ProjectGrid({
         })}
       </div>
 
-      <div className="grid gap-4 md:grid-cols-2">
+      <p role="status" aria-live="polite" className="text-sm text-muted-foreground">
+        {projectCountLabel}
+      </p>
+
+      <div id="project-results-grid" className="grid gap-4 md:grid-cols-2">
         {visibleProjects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}

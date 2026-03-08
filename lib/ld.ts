@@ -1,7 +1,7 @@
 import type { ProfilePayload, ProjectPayload, ProjectsPayload } from "@/lib/types";
 
 export function personJsonLd(profile: ProfilePayload) {
-  return {
+  const payload = {
     "@context": "https://schema.org",
     "@type": "Person",
     name: profile.name,
@@ -9,14 +9,22 @@ export function personJsonLd(profile: ProfilePayload) {
     jobTitle: profile.title,
     description: profile.bio,
     image: "https://jmcte.me/avatar/profile.svg",
-    email: `mailto:${profile.email}`,
     address: {
       "@type": "PostalAddress",
       addressLocality: profile.location
     },
-    sameAs: profile.socials.map((social) => social.url),
     hasCredential: profile.certifications ?? []
   };
+
+  if (profile.email) {
+    Object.assign(payload, { email: `mailto:${profile.email}` });
+  }
+
+  if (profile.socials.length > 0) {
+    Object.assign(payload, { sameAs: profile.socials.map((social) => social.url) });
+  }
+
+  return payload;
 }
 
 export function projectsCreativeWorkJsonLd(projectsPayload: ProjectsPayload) {

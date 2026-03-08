@@ -93,7 +93,7 @@ async function main() {
   await writeFile(path.join(publicDir, "robots.txt"), robots, "utf8");
 
   const securityTxt = [
-    "Contact: mailto:john.m.teneyck@gmail.com",
+    "Contact: https://jmcte.me/contact",
     "Expires: 2026-12-31T23:59:59Z",
     "Preferred-Languages: en",
     "Canonical: https://jmcte.me/.well-known/security.txt",

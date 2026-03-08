@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 58% 10%;
+    --foreground: 220 25% 96%;
+    --card: 222 45% 15%;
+    --card-foreground: 220 25% 96%;
+    --popover: 222 45% 15%;
+    --popover-foreground: 220 25% 96%;
+    --primary: 8 82% 62%;
+    --primary-foreground: 220 25% 96%;
+    --secondary: 220 18% 17%;
+    --secondary-foreground: 220 25% 96%;
+    --muted: 220 18% 20%;
+    --muted-foreground: 220 20% 78%;
+    --accent: 45 95% 65%;
+    --accent-foreground: 220 25% 12%;
+    --destructive: 0 80% 58%;
+    --destructive-foreground: 220 25% 96%;
+    --border: 220 16% 28%;
+    --input: 220 16% 28%;
+    --ring: 8 82% 62%;
+    --radius: 1rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-display), system-ui, sans-serif;
+  }
+
+  a {
+    @apply outline-offset-4;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-semibold;
+  }
+}
+
+@layer utilities {
+  .pattern-dots {
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      hsl(var(--foreground) / 0.2) 1px,
+      transparent 0
+    );
+    background-size: 22px 22px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}

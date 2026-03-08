@@ -1,0 +1,145 @@
+{
+  "updatedAt": "2026-02-28T00:00:00Z",
+  "experience": [
+    {
+      "title": "Vice President – Technology Architecture",
+      "org": "USAA (San Antonio, TX)",
+      "startAt": "2015-01-01",
+      "bullets": [
+        "Leads enterprise technology strategy and architecture across USAA, aligning technical direction with business goals across all divisions.",
+        "Oversees over 100 technical architects and 10 executive fellows.",
+        "Owns the SRE Center of Excellence and advanced application routing initiatives."
+      ]
+    },
+    {
+      "title": "Vice President – CIO (Interim), Property & Casualty Company",
+      "org": "USAA",
+      "startAt": "2017-01-01",
+      "endAt": "2017-12-31",
+      "bullets": [
+        "Served as CIO for the $20B Property & Casualty division.",
+        "Managed a $700M technology budget and a 1,200-person organization.",
+        "Launched a multi-year transformation program over $1B to modernize core P&C systems."
+      ]
+    },
+    {
+      "title": "Assistant Vice President – Property & Casualty IT",
+      "org": "USAA",
+      "startAt": "2014-01-01",
+      "endAt": "2014-12-31",
+      "bullets": [
+        "Primary IT liaison to the P&C President, improving customer-focused transformation.",
+        "Established a strategic governance model for technology delivery.",
+        "Drove stronger business alignment across teams and priorities."
+      ]
+    },
+    {
+      "title": "Assistant Vice President – Quality Assurance",
+      "org": "USAA",
+      "startAt": "2011-01-01",
+      "endAt": "2014-12-31",
+      "bullets": [
+        "Restructured the Testing Center of Excellence for a $750M software portfolio.",
+        "Reduced testing costs by $9M and 200 FTE.",
+        "Raised delivery quality across enterprise software programs."
+      ]
+    },
+    {
+      "title": "Assistant Vice President – Distributed Systems & Systems Management",
+      "org": "USAA",
+      "startAt": "2009-01-01",
+      "endAt": "2010-12-31",
+      "bullets": [
+        "Consolidated distributed platforms and expanded data center virtualization from 40% to 80%.",
+        "Increased infrastructure capacity by 350% without cost increase."
+      ]
+    },
+    {
+      "title": "Assistant Vice President – Availability Assurance",
+      "org": "USAA",
+      "startAt": "2007-01-01",
+      "endAt": "2008-12-31",
+      "bullets": [
+        "Improved systems reliability and operational readiness during periods of rapid organizational growth.",
+        "Built support practices focused on stability and recoverability."
+      ]
+    },
+    {
+      "title": "Director, Standards & Architecture / Manager, Infrastructure Applications",
+      "org": "Honeywell (Phoenix, AZ)",
+      "startAt": "2004-01-01",
+      "endAt": "2007-12-31",
+      "bullets": [
+        "Led standards and architecture work for infrastructure applications.",
+        "Supported enterprise modernization initiatives for operational teams."
+      ]
+    },
+    {
+      "title": "Global Director, Standards & Architecture",
+      "org": "LSG Sky Chefs (Dallas, TX)",
+      "startAt": "2003-01-01",
+      "endAt": "2004-12-31",
+      "bullets": [
+        "Directed global standards and architectural work.",
+        "Supported scalable global systems modernization."
+      ]
+    },
+    {
+      "title": "Senior Technical Consultant",
+      "org": "Accenture (Dallas, TX)",
+      "startAt": "2000-01-01",
+      "endAt": "2003-12-31",
+      "bullets": [
+        "Provided technical consulting across enterprise initiatives in software and infrastructure domains."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": "Texas A&M University, College Station, TX",
+      "degree": "B.S. in Economics",
+      "startAt": "1996-01-01",
+      "endAt": "2000-01-01"
+    }
+  ],
+  "skills": {
+    "technical": [
+      "Enterprise Architecture",
+      "IT Governance",
+      "Cloud Transformation",
+      "Quality Assurance",
+      "Infrastructure Modernization",
+      "Distributed Systems",
+      "Digital Innovation"
+    ],
+    "tools": [
+      "Enterprise Program Delivery",
+      "SRE and Reliability Engineering",
+      "Vendor Management",
+      "Architecture Governance"
+    ],
+    "soft": [
+      "Strategic leadership",
+      "Cross-functional execution",
+      "Organizational transformation"
+    ]
+  },
+  "publications": [],
+  "certifications": [
+    "Quality Assurance leadership and enterprise transformation experience"
+  ],
+  "links": [
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/johnmteneyckjr/"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/jmcte"
+    },
+    {
+      "label": "Personal site",
+      "url": "https://jmcte.me"
+    }
+  ]
+}

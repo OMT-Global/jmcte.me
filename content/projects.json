@@ -1,0 +1,61 @@
+{
+  "generatedAt": "2026-02-28T00:00:00Z",
+  "projects": [
+    {
+      "id": "openclaw-ops-tooling",
+      "title": "OpenClaw deployment operations toolkit",
+      "summary": "Operational playbooks and scripts for reliable Synology-hosted deployments with strict validation loops.",
+      "stack": ["Bash", "Docker", "Nginx", "Kubernetes", "GitHub Actions"],
+      "github": "https://github.com/jmcte/openclaw",
+      "url": "https://github.com/jmcte/openclaw",
+      "status": "active",
+      "featured": true,
+      "startedAt": "2024-11-01",
+      "finishedAt": "2025-12-31"
+    },
+    {
+      "id": "whyfi-system",
+      "title": "WhyFi reliability instrumentation",
+      "summary": "Improved telemetry thresholds, diagnostics, and hardening for reliability on mixed network conditions.",
+      "stack": ["Swift", "XCTest", "GitHub Actions", "SwiftUI"],
+      "github": "https://github.com/jmcte/Why-fi",
+      "status": "completed",
+      "featured": true,
+      "startedAt": "2025-05-01",
+      "finishedAt": "2025-11-11"
+    },
+    {
+      "id": "cw-automation-dashboard",
+      "title": "Cw-automation dashboard",
+      "summary": "Next.js + Tailwind dashboard skeleton with event and artifact flow for distributed workflows.",
+      "stack": ["Next.js", "TypeScript", "Tailwind CSS", "Vitest", "Rust"],
+      "github": "https://github.com/jmcte/cw-automation",
+      "status": "maintenance",
+      "featured": true,
+      "startedAt": "2024-09-01",
+      "finishedAt": "2026-01-01"
+    },
+    {
+      "id": "binary-inspector-suite",
+      "title": "Binary inspector tooling",
+      "summary": "Desktop and browser tooling for binary exploration, HTML sync, and debugging workflows.",
+      "stack": ["Rust", "TypeScript", "Tauri", "Playwright"],
+      "github": "https://github.com/jmcte/inspector",
+      "status": "completed",
+      "featured": false,
+      "startedAt": "2024-04-01",
+      "finishedAt": "2025-06-15"
+    },
+    {
+      "id": "ezt-compiler-adapter",
+      "title": "EZT compiler bootstrap replacement",
+      "summary": "Front-end bootstrap and validation pass for a safer local compilation pipeline.",
+      "stack": ["Rust", "PEG", "CLI", "JSON"],
+      "github": "https://github.com/jmcte/EZT",
+      "status": "active",
+      "featured": false,
+      "startedAt": "2025-01-10",
+      "finishedAt": "2025-12-18"
+    }
+  ]
+}

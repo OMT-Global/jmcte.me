@@ -6,6 +6,9 @@ dist
 .env
 .env.*
 !.env.example
+cloudflare.key
+clouflare.key
+porkbun.key
 .DS_Store
 coverage
 *.tsbuildinfo

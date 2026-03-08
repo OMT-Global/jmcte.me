@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, FileText, Globe, Mail } from "lucide-react";
+import { ArrowUpRight, FileText, Globe, UserRound } from "lucide-react";
 import type { Metadata } from "next";
 import { loadHomeCopy, loadProfile, loadProjects } from "@/lib/content";
 import { MarkdownView } from "@/components/markdown-view";
@@ -20,6 +20,20 @@ export default async function HomePage() {
     loadHomeCopy()
   ]);
   const featuredProjects = projectsPayload.projects.filter((project) => project.featured);
+  const publicSurfaceItems = [
+    ...profile.socials.map((social) => ({
+      label: social.label,
+      url: social.url,
+      handle: social.handle,
+      external: true
+    })),
+    {
+      label: "Profile JSON",
+      url: "/profile.json",
+      handle: "Machine-readable profile",
+      external: false
+    }
+  ];
 
   return (
     <>
@@ -44,17 +58,14 @@ export default async function HomePage() {
               See projects
               <ArrowUpRight className="h-4 w-4" />
             </Link>
-            <a
-              href={`mailto:${profile.email}`}
-              className="inline-flex items-center gap-2 rounded-full border border-border/70 px-5 py-2.5 transition hover:bg-card"
-            >
-              <Mail className="h-4 w-4" />
-              Contact
-            </a>
             <Link
-              href="/resume"
+              href="/about"
               className="inline-flex items-center gap-2 rounded-full border border-border/70 px-5 py-2.5 transition hover:bg-card"
             >
+              <UserRound className="h-4 w-4" />
+              About
+            </Link>
+            <Link href="/resume" className="inline-flex items-center gap-2 rounded-full border border-border/70 px-5 py-2.5 transition hover:bg-card">
               <FileText className="h-4 w-4" />
               Resume
             </Link>
@@ -99,19 +110,19 @@ export default async function HomePage() {
           </div>
         </Section>
 
-        <Section heading="Contact routes" description="Preferred inbound channels right now.">
+        <Section heading="Public surface" description="Minimal public footprint. No public inbox; published material only.">
           <div className="grid gap-3 sm:grid-cols-2">
-            {profile.socials.map((social) => (
+            {publicSurfaceItems.map((item) => (
               <a
-                key={social.label}
-                href={social.url}
-                target={social.label === "Email" ? undefined : "_blank"}
-                rel={social.label === "Email" ? undefined : "noreferrer"}
+                key={item.label}
+                href={item.url}
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noreferrer" : undefined}
                 className="group flex items-center justify-between rounded-2xl border border-border/60 bg-card/70 px-4 py-3 transition hover:border-primary/40 hover:bg-card"
               >
                 <div className="space-y-1">
-                  <p className="font-semibold">{social.label}</p>
-                  <p className="text-sm text-muted-foreground">{social.handle}</p>
+                  <p className="font-semibold">{item.label}</p>
+                  <p className="text-sm text-muted-foreground">{item.handle}</p>
                 </div>
                 <Globe className="h-4 w-4 text-muted-foreground group-hover:text-primary" />
               </a>

@@ -45,6 +45,6 @@ describe("machine-readable payloads", () => {
     const security = readFileSync(join(root, "public", ".well-known/security.txt"), "utf8");
     expect(robots).toContain("Sitemap: https://jmcte.me/sitemap.xml");
     expect(sitemap).toContain("<urlset");
-    expect(security).toContain("Contact: mailto:");
+    expect(security).toContain("Contact: https://jmcte.me/contact");
   });
 });

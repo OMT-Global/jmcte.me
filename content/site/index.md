@@ -1,7 +1,7 @@
 # Hello, I’m John.
 
-Senior technology executive with 20+ years leading enterprise transformation, quality assurance, and architecture programs in financial services, manufacturing, and aviation.
+Technology executive with 30+ years operating across enterprise architecture, reliability, quality, and modernization in regulated environments.
 
-- Led enterprise modernization for large IT organizations, including a $1B-plus transformation initiative.
-- Delivered measurable outcomes such as 19M in annual efficiency gains and major global infrastructure consolidation.
-- Build practical systems and roadmaps where the first constraint is reliable execution, not hypothetical elegance.
+- Led architecture, quality, and infrastructure organizations through large-scale modernization, recovery, and governance work.
+- Managed enterprise portfolios, executive teams, and transformation programs measured in hundreds of millions to over a billion dollars.
+- Keep a deliberately small public surface area: practical signal, limited personal exposure, and private inbound channels.

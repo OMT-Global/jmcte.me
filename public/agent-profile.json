@@ -1,29 +1,19 @@
 {
   "name": "John M. TenEyck Jr.",
   "handle": "jmcte",
-  "title": "Senior Technology Executive | Enterprise Transformation, Architecture, and QA",
-  "bio": "Senior technology leader with 20+ years driving enterprise transformation, quality assurance, and architecture programs across financial services, manufacturing, and aviation.",
-  "location": "San Antonio, TX",
+  "title": "Technology Executive | Architecture, Reliability, and Operational Security",
+  "bio": "Technology executive with 30+ years leading enterprise architecture, reliability, quality, and operational transformation across regulated environments.",
+  "location": "Texas, USA",
   "website": "https://jmcte.me",
-  "updatedAt": "2026-02-28T00:00:00Z",
+  "updatedAt": "2026-03-08T00:00:00Z",
   "socials": [
-    {
-      "label": "LinkedIn",
-      "url": "https://www.linkedin.com/in/johnmteneyckjr/",
-      "handle": "johnmteneyckjr"
-    },
     {
       "label": "GitHub",
       "url": "https://github.com/jmcte",
       "handle": "jmcte"
-    },
-    {
-      "label": "Email",
-      "url": "mailto:john.m.teneyck@gmail.com",
-      "handle": "john.m.teneyck@gmail.com"
     }
   ],
-  "availability": "Open to strategic technology leadership, architecture advisory, and platform modernization work.",
+  "availability": "Selective advisory work through private channels only.",
   "pronouns": "he/him",
   "skills": [
     "Enterprise Architecture",
@@ -36,9 +26,7 @@
     "Leadership Development",
     "Vendor Management"
   ],
-  "contactVisibility": "open",
-  "email": "john.m.teneyck@gmail.com",
-  "gpgFingerprint": "3D4B 9A6F 7C2E 1F1A B17F 8D3D 2B7A 5A31 9F2D 4C77",
+  "contactVisibility": "private",
   "certifications": [
     "Quality assurance leadership and enterprise transformation experience"
   ]

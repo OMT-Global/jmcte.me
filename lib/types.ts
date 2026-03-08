@@ -20,8 +20,7 @@ export type ProfilePayload = {
   skills: string[];
   certifications?: string[];
   contactVisibility?: ContactVisibility;
-  email: string;
-  gpgFingerprint?: string;
+  email?: string;
 };
 
 export type ProjectPayload = {

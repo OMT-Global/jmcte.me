@@ -13,11 +13,8 @@ describe("route pages", () => {
         name: "John M. TenEyck Jr."
       })
     ).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "About me" })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /LinkedIn/i })).toHaveAttribute(
-      "href",
-      "https://www.linkedin.com/in/johnmteneyckjr"
-    );
+    expect(screen.getByText("Professional Portfolio")).toBeInTheDocument();
+    expect(screen.getByText("Career trajectory")).toBeInTheDocument();
     expect(screen.queryByText("Profile JSON")).not.toBeInTheDocument();
   });
 

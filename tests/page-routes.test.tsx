@@ -13,7 +13,7 @@ describe("route pages", () => {
         name: "John M. TenEyck Jr."
       })
     ).toBeInTheDocument();
-    expect(screen.getByText("Professional Portfolio")).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "About me" })).toBeInTheDocument();
     expect(screen.queryByText("Profile JSON")).not.toBeInTheDocument();
   });
 

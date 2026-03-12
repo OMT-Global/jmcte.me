@@ -41,12 +41,7 @@ export function SiteHeader() {
                     aria-current={isActive ? "page" : undefined}
                     className={`inline-flex items-center rounded-full border px-3 py-2 text-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${isActive ? "border-primary/50 bg-primary/15" : "border-transparent hover:border-primary/40 hover:bg-primary/10"}`}
                   >
-                    <Icon
-                      size={16}
-                      className="shrink-0"
-                      state={isActive ? "active" : "default"}
-                      aria-hidden
-                    />
+                    <Icon size={16} className="shrink-0" aria-hidden />
                     <span className="sr-only">{item.label}</span>
                   </Link>
                 </li>

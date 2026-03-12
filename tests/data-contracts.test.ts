@@ -19,6 +19,9 @@ describe("machine-readable payloads", () => {
     expect(isoDate(profile.updatedAt)).toBe(true);
     expect(Array.isArray(profile.socials)).toBe(true);
     expect(profile.socials.length).toBeGreaterThan(0);
+    expect(profile.socials.find((social) => social.label === "LinkedIn")?.url).toBe(
+      "https://www.linkedin.com/in/johnmteneyckjr"
+    );
   });
 
   it("exports projects payload contract", () => {
@@ -37,6 +40,9 @@ describe("machine-readable payloads", () => {
     expect(Array.isArray(resumePayload.education)).toBe(true);
     expect(Array.isArray(resumePayload.skills.technical)).toBe(true);
     expect(isoDate(resumePayload.updatedAt)).toBe(true);
+    expect(resumePayload.links.find((link) => link.label === "LinkedIn")?.url).toBe(
+      "https://www.linkedin.com/in/johnmteneyckjr"
+    );
   });
 
   it("exposes robots, sitemap, and security metadata", () => {

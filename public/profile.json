@@ -1,16 +1,21 @@
 {
   "name": "John M. TenEyck Jr.",
   "handle": "jmcte",
-  "title": "Technology Executive | Architecture, Reliability, and Operational Security",
-  "bio": "Technology executive with 30+ years across USAA, Honeywell, LSG Sky Chefs, and Accenture, leading enterprise architecture, reliability, quality, and operational transformation in regulated environments.",
+  "title": "Senior Vice President, Chief Information Officer, Shared Services and Infrastructure",
+  "bio": "Senior technology executive with 30+ years across USAA, Honeywell, LSG Sky Chefs, and Accenture, leading shared services, enterprise architecture, infrastructure, reliability, and operational transformation in regulated environments.",
   "location": "Texas, USA",
   "website": "https://jmcte.me",
-  "updatedAt": "2026-03-08T12:00:00Z",
+  "updatedAt": "2026-03-12T21:07:53Z",
   "socials": [
     {
       "label": "GitHub",
       "url": "https://github.com/jmcte",
       "handle": "jmcte"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/johnmteneyckjr",
+      "handle": "johnmteneyckjr"
     }
   ],
   "availability": "Selective advisory work through private channels only.",

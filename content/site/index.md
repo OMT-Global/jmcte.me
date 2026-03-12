@@ -1,7 +1,7 @@
 # Hello, I’m John.
 
-I have spent 30+ years leading technology organizations across financial services, manufacturing, aviation, and consulting. Most of my work has focused on enterprise architecture, reliability, quality, and secure operations in regulated environments.
+I currently serve as Senior Vice President and Chief Information Officer for Shared Services and Infrastructure at USAA. I have spent 30+ years leading technology organizations across financial services, manufacturing, aviation, and consulting, with most of that work centered on enterprise architecture, reliability, and secure operations in regulated environments.
 
-- Led architecture, quality, and infrastructure organizations at USAA, with earlier leadership roles at Honeywell, LSG Sky Chefs, and Accenture.
-- Managed executive teams, portfolio budgets, and transformation programs ranging from recovery efforts to multi-year modernization initiatives measured from hundreds of millions to over a billion dollars.
+- Lead shared services, infrastructure, and enterprise architecture in a large regulated environment.
+- Earlier leadership roles span Honeywell, LSG Sky Chefs, and Accenture, with executive responsibility across architecture, quality, and transformation programs.
 - Keep this site intentionally simple: public open-source work only, with private inbound channels for advisory conversations.

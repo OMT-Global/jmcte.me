@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { Linkedin } from "lucide-react";
 import { loadHomeCopy, loadProfile, loadProjects } from "@/lib/content";
 import { MarkdownView } from "@/components/markdown-view";
 import { Section } from "@/components/section";
@@ -38,6 +39,7 @@ export default async function HomePage() {
   ]);
   const featuredProjects = projectsPayload.projects.filter((project) => project.featured);
   const githubProfile = profile.socials.find((social) => social.label === "GitHub");
+  const linkedinProfile = profile.socials.find((social) => social.label === "LinkedIn");
 
   return (
     <>
@@ -116,7 +118,7 @@ export default async function HomePage() {
         </Section>
 
         <Section heading="Public channels" description="Where to find verified public links.">
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {githubProfile ? (
               <a
                 href={githubProfile.url}
@@ -131,6 +133,24 @@ export default async function HomePage() {
                 <GithubIcon
                   size={18}
                   className="text-muted-foreground group-hover:text-primary"
+                  aria-hidden
+                />
+              </a>
+            ) : null}
+            {linkedinProfile ? (
+              <a
+                href={linkedinProfile.url}
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-center justify-between rounded-2xl border border-border/60 bg-card/70 px-4 py-3 transition hover:border-primary/40 hover:bg-card"
+              >
+                <div className="space-y-1">
+                  <p className="font-semibold">LinkedIn</p>
+                  <p className="text-sm text-muted-foreground">{linkedinProfile.handle}</p>
+                </div>
+                <Linkedin
+                  size={18}
+                  className="text-muted-foreground transition group-hover:text-primary"
                   aria-hidden
                 />
               </a>

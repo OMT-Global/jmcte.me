@@ -1,10 +1,21 @@
 {
-  "updatedAt": "2026-03-08T12:00:00Z",
+  "updatedAt": "2026-03-12T21:07:53Z",
   "experience": [
     {
-      "title": "Vice President – Technology Architecture",
+      "title": "Senior Vice President – Chief Information Officer, Shared Services and Infrastructure",
+      "org": "USAA (San Antonio, TX)",
+      "startAt": "2023-03-01",
+      "bullets": [
+        "Provides executive leadership for shared services and infrastructure technology across USAA.",
+        "Builds on prior enterprise architecture leadership to align platform direction, resilience, and delivery execution across the enterprise.",
+        "Continues a focus on secure operations, recoverability, and large-scale modernization in a regulated environment."
+      ]
+    },
+    {
+      "title": "Vice President – Enterprise Architecture",
       "org": "USAA (San Antonio, TX)",
       "startAt": "2015-01-01",
+      "endAt": "2023-02-28",
       "bullets": [
         "Leads enterprise technology strategy and architecture across USAA, aligning technical direction with business goals across all divisions.",
         "Oversees over 100 technical architects and 10 executive fellows.",
@@ -132,6 +143,10 @@
     {
       "label": "GitHub",
       "url": "https://github.com/jmcte"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/johnmteneyckjr"
     },
     {
       "label": "Personal site",

@@ -17,7 +17,10 @@ const navItems = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-30 border-b border-border/30 bg-background/85 backdrop-blur">
+    <header
+      data-site-loader-item
+      className="sticky top-0 z-30 border-b border-border/30 bg-background/85 backdrop-blur"
+    >
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between py-4 px-6">
         <Link href="/" aria-label="JMCTE home" className="font-semibold tracking-wide">
           JMCTE

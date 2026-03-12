@@ -21,7 +21,7 @@ export default async function ResumePage() {
     <div className="space-y-10">
       <Section heading="Resume" description="Selected executive and technical roles from a 30+ year career." />
 
-      <section className="space-y-4">
+      <section data-site-loader-item className="space-y-4">
         <h3 className="text-xl font-semibold">Experience</h3>
         <div className="space-y-4">
           {resume.experience.map((entry) => (
@@ -43,7 +43,7 @@ export default async function ResumePage() {
         </div>
       </section>
 
-      <section className="space-y-4">
+      <section data-site-loader-item className="space-y-4">
         <h3 className="text-xl font-semibold">Education</h3>
         <div className="grid gap-4 md:grid-cols-2">
           {resume.education.map((education) => (
@@ -58,7 +58,7 @@ export default async function ResumePage() {
         </div>
       </section>
 
-      <section className="space-y-4">
+      <section data-site-loader-item className="space-y-4">
         <h3 className="text-xl font-semibold">Skills</h3>
         <div className="space-y-3">
           <div className="space-x-2">
@@ -85,7 +85,7 @@ export default async function ResumePage() {
         </div>
       </section>
 
-      <section className="space-y-3">
+      <section data-site-loader-item className="space-y-3">
         <h3 className="text-xl font-semibold">Certifications and publications</h3>
         <Card className="space-y-4 p-5">
           <div>

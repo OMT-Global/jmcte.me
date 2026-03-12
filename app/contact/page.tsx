@@ -13,12 +13,14 @@ export default async function ContactPage() {
 
   return (
     <div className="space-y-6">
-      <h1 className="text-4xl font-semibold">Access</h1>
-      <p className="max-w-xl text-sm text-muted-foreground">
-        I keep direct communication private. Public material here is intentionally limited to published work
-        and a minimal operating surface.
-      </p>
-      <section className="grid gap-4 md:grid-cols-2">
+      <div data-site-loader-item className="space-y-6">
+        <h1 className="text-4xl font-semibold">Access</h1>
+        <p className="max-w-xl text-sm text-muted-foreground">
+          I keep direct communication private. Public material here is intentionally limited to published work
+          and a minimal operating surface.
+        </p>
+      </div>
+      <section data-site-loader-item className="grid gap-4 md:grid-cols-2">
         <div className="rounded-2xl border border-border/60 bg-card/80 p-5">
           <div className="mb-2 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary/15 text-primary">
             <LockIcon size={20} aria-hidden />

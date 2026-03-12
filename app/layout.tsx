@@ -31,7 +31,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${displayFont.variable} ${codeFont.variable}`}>
+    <html
+      lang="en"
+      data-site-loader="visible"
+      className={`${displayFont.variable} ${codeFont.variable}`}
+    >
       <body className="antialiased">
         <a
           href="#main-content"
@@ -45,7 +49,7 @@ export default function RootLayout({
             className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,hsl(var(--primary)/0.12),transparent_40%),radial-gradient(circle_at_85%_5%,hsl(var(--accent)/0.15),transparent_30%),radial-gradient(circle_at_30%_90%,hsl(var(--secondary)/0.24),transparent_35%)]"
             aria-hidden
           />
-          <div className="relative z-10">
+          <div className="site-loader-surface relative z-10 transition-[filter,opacity,transform] duration-700 ease-out">
             <SiteHeader />
             <SiteShell>{children}</SiteShell>
             <SiteFooter />

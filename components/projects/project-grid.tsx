@@ -104,7 +104,7 @@ export default function ProjectGrid({
   const projectCountLabel = `${visibleProjects.length} public project${visibleProjects.length === 1 ? "" : "s"} shown`;
 
   return (
-    <section className="space-y-6">
+    <section data-site-loader-item className="space-y-6">
       <div className="flex flex-wrap gap-3" role="group" aria-label="Project filters">
         {filterOptions.map((filterOption) => {
           const isActive = statusFilter === filterOption.key;

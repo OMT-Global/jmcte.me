@@ -14,17 +14,17 @@ describe("route pages", () => {
       })
     ).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "About me" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /LinkedIn/i })).toHaveAttribute(
+      "href",
+      "https://www.linkedin.com/in/johnmteneyckjr"
+    );
     expect(screen.queryByText("Profile JSON")).not.toBeInTheDocument();
   });
 
   it("renders about page content", async () => {
     render(await AboutPage());
-    expect(
-      screen.getByRole("heading", {
-        name: "About",
-        level: 2
-      })
-    ).toBeInTheDocument();
+    expect(screen.getAllByRole("heading", { name: "About" })).toHaveLength(1);
+    expect(screen.getByText(/Senior Vice President and Chief Information Officer/i)).toBeInTheDocument();
   });
 
   it("renders projects page content", async () => {

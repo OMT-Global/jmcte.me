@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Linkedin } from "lucide-react";
 import { loadProfile } from "@/lib/content";
 import { GithubIcon, LockIcon } from "@/components/icons/animated";
 
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
 export default async function ContactPage() {
   const profile = await loadProfile();
   const githubProfile = profile.socials.find((social) => social.label === "GitHub");
+  const linkedinProfile = profile.socials.find((social) => social.label === "LinkedIn");
 
   return (
     <div className="space-y-6">
@@ -20,7 +22,7 @@ export default async function ContactPage() {
           and a minimal operating surface.
         </p>
       </div>
-      <section data-site-loader-item className="grid gap-4 md:grid-cols-2">
+      <section data-site-loader-item className="grid gap-4 md:grid-cols-3">
         <div className="rounded-2xl border border-border/60 bg-card/80 p-5">
           <div className="mb-2 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary/15 text-primary">
             <LockIcon size={20} aria-hidden />
@@ -48,6 +50,24 @@ export default async function ContactPage() {
               correspondence stay off the public surface.
             </p>
             <p className="mt-2 text-xs text-muted-foreground">{githubProfile.handle}</p>
+          </a>
+        ) : null}
+
+        {linkedinProfile ? (
+          <a
+            href={linkedinProfile.url}
+            target="_blank"
+            rel="noreferrer"
+            className="block rounded-2xl border border-border/60 bg-card/80 p-5 transition hover:border-primary/40 hover:bg-card"
+          >
+            <div className="mb-2 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-accent/20 text-accent-foreground">
+              <Linkedin size={20} aria-hidden />
+            </div>
+            <p className="font-semibold">LinkedIn</p>
+            <p className="text-sm text-muted-foreground">
+              Public professional background and executive role history are available on LinkedIn.
+            </p>
+            <p className="mt-2 text-xs text-muted-foreground">{linkedinProfile.handle}</p>
           </a>
         ) : null}
       </section>

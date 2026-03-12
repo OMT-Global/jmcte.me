@@ -14,7 +14,7 @@ export function Section({
   ...props
 }: SectionProps) {
   return (
-    <section className={cn("space-y-6", className)} {...props}>
+    <section data-site-loader-item className={cn("space-y-6", className)} {...props}>
       <div>
         <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">{heading}</h2>
         {description ? <p className="mt-2 text-sm text-muted-foreground">{description}</p> : null}

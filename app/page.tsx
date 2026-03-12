@@ -34,8 +34,8 @@ export default async function HomePage() {
     <>
       <PersonStructuredData profile={profile} />
       <ProjectsStructuredData projects={projectsPayload} />
-      <section className="space-y-10">
-        <div className="space-y-6">
+      <div className="space-y-10">
+        <div data-site-loader-item className="space-y-6">
           <p className="inline-block rounded-full border border-primary/40 bg-primary/10 px-4 py-1 text-xs uppercase tracking-[0.3em] text-primary">
             Professional Portfolio
           </p>
@@ -141,7 +141,7 @@ export default async function HomePage() {
             </Link>
           </div>
         </Section>
-      </section>
+      </div>
     </>
   );
 }

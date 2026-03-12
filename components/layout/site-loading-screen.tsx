@@ -5,21 +5,40 @@ import { ShieldCheckIcon } from "@/components/icons/animated";
 import { cn } from "@/lib/utils";
 
 export const SITE_LOADER_MIN_MS = 900;
-export const SITE_LOADER_EXIT_MS = 360;
+export const SITE_LOADER_HOLD_MS = 500;
+export const SITE_LOADER_EXIT_MS = 420;
+export const SITE_LOADER_REVEAL_STAGGER_MS = 120;
+export const SITE_LOADER_ITEM_REVEAL_MS = 760;
 
 const SITE_LOADER_FAILSAFE_MS = 3200;
 
 export function SiteLoadingScreen() {
-  const [phase, setPhase] = useState<"visible" | "exiting" | "hidden">("visible");
+  const [phase, setPhase] = useState<"visible" | "holding" | "revealing" | "hidden">("visible");
 
   useEffect(() => {
+    const documentRoot = document.documentElement;
+    const revealTargets = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-site-loader-item]")
+    );
+
+    revealTargets.forEach((target, index) => {
+      target.style.setProperty("--site-loader-index", `${index}`);
+    });
+
     let minimumElapsed = false;
     let windowReady = document.readyState === "complete";
     let fontsReady = typeof document.fonts === "undefined";
     let finished = false;
 
+    documentRoot.dataset.siteLoader = "visible";
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+
+    const revealWindowMs = Math.max(
+      SITE_LOADER_EXIT_MS,
+      Math.max(revealTargets.length - 1, 0) * SITE_LOADER_REVEAL_STAGGER_MS +
+        SITE_LOADER_ITEM_REVEAL_MS
+    );
 
     const finish = () => {
       if (finished) {
@@ -27,12 +46,34 @@ export function SiteLoadingScreen() {
       }
 
       finished = true;
-      setPhase("exiting");
+      setPhase("holding");
+      documentRoot.dataset.siteLoader = "holding";
 
-      exitTimer = window.setTimeout(() => {
+      holdTimer = window.setTimeout(() => {
+        setPhase("revealing");
+        documentRoot.dataset.siteLoader = "revealing";
+
+        exitTimer = window.setTimeout(() => {
+          documentRoot.removeAttribute("data-site-loader");
+          revealTargets.forEach((target) => {
+            target.style.removeProperty("--site-loader-index");
+          });
+          document.body.style.overflow = previousOverflow;
+          setPhase("hidden");
+        }, revealWindowMs);
+      }, SITE_LOADER_HOLD_MS);
+    };
+
+    const clearLoaderState = () => {
+      if (documentRoot.dataset.siteLoader) {
+        documentRoot.removeAttribute("data-site-loader");
+      }
+      revealTargets.forEach((target) => {
+        target.style.removeProperty("--site-loader-index");
+      });
+      if (document.body.style.overflow !== previousOverflow) {
         document.body.style.overflow = previousOverflow;
-        setPhase("hidden");
-      }, SITE_LOADER_EXIT_MS);
+      }
     };
 
     const maybeFinish = () => {
@@ -52,6 +93,7 @@ export function SiteLoadingScreen() {
       maybeFinish();
     }, SITE_LOADER_MIN_MS);
 
+    let holdTimer = 0;
     let exitTimer = 0;
     const failsafeTimer = window.setTimeout(() => {
       finish();
@@ -75,9 +117,10 @@ export function SiteLoadingScreen() {
     return () => {
       window.clearTimeout(minimumTimer);
       window.clearTimeout(failsafeTimer);
+      window.clearTimeout(holdTimer);
       window.clearTimeout(exitTimer);
       window.removeEventListener("load", handleLoad);
-      document.body.style.overflow = previousOverflow;
+      clearLoaderState();
     };
   }, []);
 
@@ -88,14 +131,14 @@ export function SiteLoadingScreen() {
   return (
     <>
       <noscript>
-        <style>{".site-loading-screen{display:none!important}"}</style>
+        <style>{".site-loading-screen{display:none!important}html[data-site-loader] .site-loader-surface{filter:none!important;transform:none!important;opacity:1!important}html[data-site-loader] [data-site-loader-item]{filter:none!important;transform:none!important;opacity:1!important}"}</style>
       </noscript>
       <div
         aria-label="Loading site"
         aria-live="polite"
         className={cn(
           "site-loading-screen fixed inset-0 z-[70] flex items-center justify-center overflow-hidden bg-background/96 px-6 transition-opacity duration-300",
-          phase === "exiting" && "pointer-events-none opacity-0"
+          phase === "revealing" && "pointer-events-none opacity-0"
         )}
         role="status"
       >

@@ -61,6 +61,7 @@ export type PatentItem = {
   title: string;
   patentNumber: string;
   issuedAt: string;
+  url: string;
 };
 
 export type ResumePayload = {

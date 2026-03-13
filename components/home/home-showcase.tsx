@@ -512,20 +512,25 @@ export function HomeShowcase({ profile, projects, resume }: HomeShowcaseProps) {
           </p>
           <div className="mt-6 space-y-4">
             {recentPatents.map((patent: PatentItem) => (
-              <article
+              <a
                 key={patent.patentNumber}
-                className="rounded-3xl border border-border/70 bg-card/65 px-5 py-4"
+                href={patent.url}
+                target="_blank"
+                rel="noreferrer"
+                className="group block rounded-3xl border border-border/70 bg-card/65 px-5 py-4 transition hover:border-primary/40 hover:bg-card/80"
               >
                 <div className="flex flex-wrap items-start justify-between gap-3">
                   <div className="space-y-2">
-                    <p className="text-lg font-semibold text-foreground">{patent.title}</p>
+                    <p className="text-lg font-semibold text-foreground transition group-hover:text-primary">
+                      {patent.title}
+                    </p>
                     <p className="text-sm text-muted-foreground">US {patent.patentNumber}</p>
                   </div>
                   <Badge className="border-border/70 bg-background/50 text-foreground">
                     {formatPatentDate(patent.issuedAt)}
                   </Badge>
                 </div>
-              </article>
+              </a>
             ))}
           </div>
         </Card>

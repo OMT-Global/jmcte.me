@@ -41,6 +41,7 @@ describe("machine-readable payloads", () => {
     expect(Array.isArray(resumePayload.patents)).toBe(true);
     expect(resumePayload.patents.length).toBeGreaterThan(0);
     expect(resumePayload.patents[0]?.patentNumber).toBe("12184814");
+    expect(resumePayload.patents.every((patent) => patent.url.startsWith("https://patents.google.com/patent/US"))).toBe(true);
     expect(isoDate(resumePayload.updatedAt)).toBe(true);
     expect(resumePayload.links.find((link) => link.label === "LinkedIn")?.url).toBe(
       "https://www.linkedin.com/in/johnmteneyckjr"

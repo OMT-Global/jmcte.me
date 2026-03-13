@@ -58,8 +58,17 @@ export default async function ResumePage() {
           {resume.patents.map((patent) => (
             <Card key={patent.patentNumber} className="space-y-3 p-5">
               <div className="flex flex-wrap items-start justify-between gap-3">
-                <h4 className="max-w-xl text-lg font-semibold">{patent.title}</h4>
-                <Badge variant="outline">US {patent.patentNumber}</Badge>
+                <a
+                  href={patent.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="max-w-xl text-lg font-semibold text-foreground underline-offset-4 transition hover:text-primary hover:underline"
+                >
+                  {patent.title}
+                </a>
+                <a href={patent.url} target="_blank" rel="noreferrer">
+                  <Badge variant="outline">US {patent.patentNumber}</Badge>
+                </a>
               </div>
               <p className="text-sm text-muted-foreground">
                 Issued {formatPatentDate(patent.issuedAt)}

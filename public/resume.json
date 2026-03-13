@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-03-12T21:07:53Z",
+  "updatedAt": "2026-03-13T20:12:00Z",
   "experience": [
     {
       "title": "Senior Vice President – Chief Information Officer, Shared Services and Infrastructure",
@@ -135,6 +135,83 @@
       "Organizational transformation"
     ]
   },
+  "patents": [
+    {
+      "title": "Learning based metric determination and clustering for service routing",
+      "patentNumber": "12184814",
+      "issuedAt": "2024-12-31"
+    },
+    {
+      "title": "Estimation using image analysis",
+      "patentNumber": "11836910",
+      "issuedAt": "2023-12-05"
+    },
+    {
+      "title": "Learning based metric determination for service sessions",
+      "patentNumber": "11272057",
+      "issuedAt": "2022-03-08"
+    },
+    {
+      "title": "Estimation using image analysis",
+      "patentNumber": "11176659",
+      "issuedAt": "2021-11-16"
+    },
+    {
+      "title": "Learning based metric determination for service sessions",
+      "patentNumber": "11146682",
+      "issuedAt": "2021-10-12"
+    },
+    {
+      "title": "Learning based metric determination and clustering for service routing",
+      "patentNumber": "11140268",
+      "issuedAt": "2021-10-05"
+    },
+    {
+      "title": "Learning based metric determination for service sessions",
+      "patentNumber": "10855844",
+      "issuedAt": "2020-12-01"
+    },
+    {
+      "title": "Learning based metric determination for service sessions",
+      "patentNumber": "10848621",
+      "issuedAt": "2020-11-24"
+    },
+    {
+      "title": "Rapid data access",
+      "patentNumber": "10771623",
+      "issuedAt": "2020-09-08"
+    },
+    {
+      "title": "Dynamic resource allocation",
+      "patentNumber": "10757263",
+      "issuedAt": "2020-08-25"
+    },
+    {
+      "title": "Learning based metric determination and clustering for service routing",
+      "patentNumber": "10715668",
+      "issuedAt": "2020-07-14"
+    },
+    {
+      "title": "Dynamic resource allocation",
+      "patentNumber": "10715665",
+      "issuedAt": "2020-07-14"
+    },
+    {
+      "title": "Estimation using image analysis",
+      "patentNumber": "10510142",
+      "issuedAt": "2019-12-17"
+    },
+    {
+      "title": "Dynamic resource allocation",
+      "patentNumber": "10477024",
+      "issuedAt": "2019-11-12"
+    },
+    {
+      "title": "Rapid data access",
+      "patentNumber": "10477014",
+      "issuedAt": "2019-11-12"
+    }
+  ],
   "publications": [],
   "certifications": [
     "Quality Assurance leadership and enterprise transformation experience"

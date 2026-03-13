@@ -10,14 +10,15 @@ describe("route pages", () => {
     render(await HomePage());
     expect(
       screen.getByRole("heading", {
-        name: "John M. TenEyck Jr."
+        name: "John McChesney TenEyck Jr."
       })
     ).toBeInTheDocument();
     expect(screen.getByText("Professional Portfolio")).toBeInTheDocument();
     expect(screen.getByText("Career trajectory")).toBeInTheDocument();
-    expect(screen.getByText("Tooling trace")).toBeInTheDocument();
-    expect(screen.getByText(/npx slopmeter@latest --all --dark/)).toBeInTheDocument();
-    expect(screen.getByAltText(/Slopmeter activity heatmap/i)).toBeInTheDocument();
+    expect(screen.getByText("Patent record")).toBeInTheDocument();
+    expect(screen.getByText("Slopmeter snapshot")).toBeInTheDocument();
+    expect(screen.getByText(/Generated with `slopmeter`/)).toBeInTheDocument();
+    expect(screen.getByAltText(/Slopmeter usage snapshot/i)).toBeInTheDocument();
     expect(screen.queryByText("Profile JSON")).not.toBeInTheDocument();
   });
 
@@ -37,5 +38,6 @@ describe("route pages", () => {
     render(await ResumePage());
     expect(screen.getByRole("heading", { name: "Resume" })).toBeInTheDocument();
     expect(screen.getByText("Experience")).toBeInTheDocument();
+    expect(screen.getByText("Patents")).toBeInTheDocument();
   });
 });

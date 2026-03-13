@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import type {
@@ -35,6 +36,38 @@ type Lane = {
   summary: string;
   icon: typeof ShieldCheckIcon;
 };
+
+const slopmeterSnapshot = {
+  command: "npx slopmeter@latest --all --dark",
+  startDate: "2025-03-13",
+  endDate: "2026-03-13",
+  colorMode: "dark",
+  rendered: "all",
+  image: {
+    src: "/heatmap-last-year.png",
+    alt: "Slopmeter activity heatmap rendered in dark mode for March 13, 2025 through March 13, 2026.",
+    width: 4000,
+    height: 1699
+  },
+  tools: [
+    {
+      name: "Claude Code",
+      detected: true
+    },
+    {
+      name: "Codex",
+      detected: true
+    },
+    {
+      name: "Cursor",
+      detected: false
+    },
+    {
+      name: "Open Code",
+      detected: false
+    }
+  ]
+} as const;
 
 const signalMetrics = [
   {
@@ -78,6 +111,15 @@ function revealStyle(index: number): CSSProperties {
   return {
     "--site-loader-index": index
   } as CSSProperties;
+}
+
+function formatSnapshotDate(date: string) {
+  return new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC"
+  }).format(new Date(`${date}T00:00:00Z`));
 }
 
 function yearFromDate(date: string) {
@@ -133,6 +175,7 @@ export function HomeShowcase({ profile, projects, resume }: HomeShowcaseProps) {
   const githubProfile = profile.socials.find((social) => social.label === "GitHub");
   const trajectory = buildTrajectory(resume.experience);
   const publicSkillSet = profile.skills.slice(0, 8);
+  const slopmeterWindow = `${formatSnapshotDate(slopmeterSnapshot.startDate)} - ${formatSnapshotDate(slopmeterSnapshot.endDate)}`;
 
   return (
     <div className="space-y-6 sm:space-y-8">
@@ -520,6 +563,102 @@ export function HomeShowcase({ profile, projects, resume }: HomeShowcaseProps) {
             </div>
           </Card>
         </div>
+      </section>
+
+      <section
+        data-site-loader-item
+        style={revealStyle(3)}
+        className="grid gap-6 xl:grid-cols-[0.9fr_1.1fr]"
+      >
+        <Card variant="muted" className="p-6 sm:p-7">
+          <div className="flex flex-wrap items-start justify-between gap-4">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary/80">
+                Tooling trace
+              </p>
+              <h2 className="mt-3 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
+                A `slopmeter` snapshot now lives on the homepage.
+              </h2>
+              <p className="mt-3 max-w-2xl text-sm leading-7 text-muted-foreground">
+                The section below renders the actual dark-mode heatmap produced by the command
+                shown here, along with the tool-detection output from the same run.
+              </p>
+            </div>
+            <Badge className="border-primary/20 bg-primary/10 text-primary-foreground/90">
+              {slopmeterSnapshot.colorMode} render
+            </Badge>
+          </div>
+
+          <div className="mt-6 rounded-3xl border border-white/10 bg-slate-950/72 p-4">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-white/45">
+              Command
+            </p>
+            <code className="mt-3 block overflow-x-auto text-sm font-medium text-white">
+              {slopmeterSnapshot.command}
+            </code>
+          </div>
+
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            <div className="rounded-3xl border border-border/70 bg-card/80 px-4 py-4">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-primary/70">
+                Time window
+              </p>
+              <p className="mt-2 text-sm font-medium text-foreground">{slopmeterWindow}</p>
+            </div>
+            <div className="rounded-3xl border border-border/70 bg-card/80 px-4 py-4">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-primary/70">
+                Render target
+              </p>
+              <p className="mt-2 text-sm font-medium text-foreground">
+                {slopmeterSnapshot.rendered}
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            {slopmeterSnapshot.tools.map((tool) => (
+              <div
+                key={tool.name}
+                className="rounded-3xl border border-border/70 bg-card/80 px-4 py-4"
+              >
+                <p className="text-sm font-semibold text-foreground">{tool.name}</p>
+                <p
+                  className={
+                    tool.detected
+                      ? "mt-2 text-sm font-medium text-emerald-300"
+                      : "mt-2 text-sm font-medium text-muted-foreground"
+                  }
+                >
+                  {tool.detected ? "Found" : "Not found"}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Card>
+
+        <Card className="overflow-hidden p-4 sm:p-5">
+          <div className="rounded-[1.75rem] border border-white/10 bg-slate-950/92 p-3">
+            <div className="flex flex-wrap items-center justify-between gap-3 px-2 pb-3">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary/80">
+                  Slopmeter output
+                </p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Dark-mode heatmap covering {slopmeterWindow}.
+                </p>
+              </div>
+              <Badge className="border-white/12 bg-white/5 text-white/72">4000 x 1699</Badge>
+            </div>
+
+            <Image
+              src={slopmeterSnapshot.image.src}
+              alt={slopmeterSnapshot.image.alt}
+              width={slopmeterSnapshot.image.width}
+              height={slopmeterSnapshot.image.height}
+              className="h-auto w-full rounded-[1.25rem] border border-white/5"
+            />
+          </div>
+        </Card>
       </section>
     </div>
   );

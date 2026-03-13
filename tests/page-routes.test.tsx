@@ -15,6 +15,9 @@ describe("route pages", () => {
     ).toBeInTheDocument();
     expect(screen.getByText("Professional Portfolio")).toBeInTheDocument();
     expect(screen.getByText("Career trajectory")).toBeInTheDocument();
+    expect(screen.getByText("Tooling trace")).toBeInTheDocument();
+    expect(screen.getByText(/npx slopmeter@latest --all --dark/)).toBeInTheDocument();
+    expect(screen.getByAltText(/Slopmeter activity heatmap/i)).toBeInTheDocument();
     expect(screen.queryByText("Profile JSON")).not.toBeInTheDocument();
   });
 

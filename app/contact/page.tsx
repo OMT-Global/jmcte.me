@@ -65,7 +65,7 @@ export default async function ContactPage() {
             </div>
             <p className="font-semibold">LinkedIn</p>
             <p className="text-sm text-muted-foreground">
-              Public professional background and executive role history are available on LinkedIn.
+              Public professional background, patents, and executive role history are available on LinkedIn.
             </p>
             <p className="mt-2 text-xs text-muted-foreground">{linkedinProfile.handle}</p>
           </a>

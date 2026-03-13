@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import type {
+  PatentItem,
   ProfilePayload,
   ProjectsPayload,
   ResumePayload,
@@ -38,35 +39,14 @@ type Lane = {
 };
 
 const slopmeterSnapshot = {
-  command: "npx slopmeter@latest --all --dark",
   startDate: "2025-03-13",
   endDate: "2026-03-13",
-  colorMode: "dark",
-  rendered: "all",
   image: {
     src: "/heatmap-last-year.png",
-    alt: "Slopmeter activity heatmap rendered in dark mode for March 13, 2025 through March 13, 2026.",
+    alt: "Slopmeter usage snapshot for March 13, 2025 through March 13, 2026.",
     width: 4000,
     height: 1699
-  },
-  tools: [
-    {
-      name: "Claude Code",
-      detected: true
-    },
-    {
-      name: "Codex",
-      detected: true
-    },
-    {
-      name: "Cursor",
-      detected: false
-    },
-    {
-      name: "Open Code",
-      detected: false
-    }
-  ]
+  }
 } as const;
 
 const signalMetrics = [
@@ -117,6 +97,14 @@ function formatSnapshotDate(date: string) {
   return new Intl.DateTimeFormat("en-US", {
     month: "short",
     day: "numeric",
+    year: "numeric",
+    timeZone: "UTC"
+  }).format(new Date(`${date}T00:00:00Z`));
+}
+
+function formatPatentDate(date: string) {
+  return new Intl.DateTimeFormat("en-US", {
+    month: "short",
     year: "numeric",
     timeZone: "UTC"
   }).format(new Date(`${date}T00:00:00Z`));
@@ -175,6 +163,12 @@ export function HomeShowcase({ profile, projects, resume }: HomeShowcaseProps) {
   const githubProfile = profile.socials.find((social) => social.label === "GitHub");
   const trajectory = buildTrajectory(resume.experience);
   const publicSkillSet = profile.skills.slice(0, 8);
+  const recentPatents = resume.patents.slice(0, 6);
+  const patentFamilies = new Set(resume.patents.map((patent) => patent.title)).size;
+  const patentActiveWindow =
+    resume.patents.length > 0
+      ? `${yearFromDate(resume.patents[resume.patents.length - 1].issuedAt)}-${yearFromDate(resume.patents[0].issuedAt)}`
+      : null;
   const slopmeterWindow = `${formatSnapshotDate(slopmeterSnapshot.startDate)} - ${formatSnapshotDate(slopmeterSnapshot.endDate)}`;
 
   return (
@@ -459,6 +453,87 @@ export function HomeShowcase({ profile, projects, resume }: HomeShowcaseProps) {
       <section
         data-site-loader-item
         style={revealStyle(2)}
+        className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr]"
+      >
+        <Card variant="muted" className="p-6 sm:p-7">
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary/80">
+                Patent record
+              </p>
+              <h2 className="mt-3 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
+                Issued work across service routing, estimation, and platform operations.
+              </h2>
+              <p className="mt-3 max-w-2xl text-sm leading-7 text-muted-foreground">
+                Publicly listed grants cover machine-learning service routing, image-based
+                estimation, dynamic resource allocation, and rapid data access.
+              </p>
+            </div>
+            <Badge className="border-primary/20 bg-primary/10 text-primary-foreground/90">
+              Selected grants
+            </Badge>
+          </div>
+
+          <div className="mt-6 grid gap-3 sm:grid-cols-3">
+            <div className="rounded-3xl border border-border/70 bg-card/80 px-4 py-4">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-primary/70">
+                Listed grants
+              </p>
+              <p className="mt-2 text-2xl font-semibold text-foreground">{resume.patents.length}</p>
+            </div>
+            <div className="rounded-3xl border border-border/70 bg-card/80 px-4 py-4">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-primary/70">
+                Title families
+              </p>
+              <p className="mt-2 text-2xl font-semibold text-foreground">{patentFamilies}</p>
+            </div>
+            <div className="rounded-3xl border border-border/70 bg-card/80 px-4 py-4">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-primary/70">
+                Active years
+              </p>
+              <p className="mt-2 text-2xl font-semibold text-foreground">{patentActiveWindow}</p>
+            </div>
+          </div>
+
+          <div className="mt-6">
+            <Link
+              href="/resume"
+              className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-card/80 px-5 py-3 text-sm font-semibold transition hover:border-primary/40 hover:bg-card"
+            >
+              Review full patent section
+              <ArrowUpRightIcon size={16} className="shrink-0" aria-hidden />
+            </Link>
+          </div>
+        </Card>
+
+        <Card className="p-6 sm:p-7">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary/80">
+            Recent grants
+          </p>
+          <div className="mt-6 space-y-4">
+            {recentPatents.map((patent: PatentItem) => (
+              <article
+                key={patent.patentNumber}
+                className="rounded-3xl border border-border/70 bg-card/65 px-5 py-4"
+              >
+                <div className="flex flex-wrap items-start justify-between gap-3">
+                  <div className="space-y-2">
+                    <p className="text-lg font-semibold text-foreground">{patent.title}</p>
+                    <p className="text-sm text-muted-foreground">US {patent.patentNumber}</p>
+                  </div>
+                  <Badge className="border-border/70 bg-background/50 text-foreground">
+                    {formatPatentDate(patent.issuedAt)}
+                  </Badge>
+                </div>
+              </article>
+            ))}
+          </div>
+        </Card>
+      </section>
+
+      <section
+        data-site-loader-item
+        style={revealStyle(3)}
         className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]"
       >
         <Card variant="accent" className="p-6 sm:p-7">
@@ -567,84 +642,18 @@ export function HomeShowcase({ profile, projects, resume }: HomeShowcaseProps) {
 
       <section
         data-site-loader-item
-        style={revealStyle(3)}
-        className="grid gap-6 xl:grid-cols-[0.9fr_1.1fr]"
+        style={revealStyle(4)}
+        className="grid gap-6"
       >
-        <Card variant="muted" className="p-6 sm:p-7">
-          <div className="flex flex-wrap items-start justify-between gap-4">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary/80">
-                Tooling trace
-              </p>
-              <h2 className="mt-3 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
-                A `slopmeter` snapshot now lives on the homepage.
-              </h2>
-              <p className="mt-3 max-w-2xl text-sm leading-7 text-muted-foreground">
-                The section below renders the actual dark-mode heatmap produced by the command
-                shown here, along with the tool-detection output from the same run.
-              </p>
-            </div>
-            <Badge className="border-primary/20 bg-primary/10 text-primary-foreground/90">
-              {slopmeterSnapshot.colorMode} render
-            </Badge>
-          </div>
-
-          <div className="mt-6 rounded-3xl border border-white/10 bg-slate-950/72 p-4">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-white/45">
-              Command
-            </p>
-            <code className="mt-3 block overflow-x-auto text-sm font-medium text-white">
-              {slopmeterSnapshot.command}
-            </code>
-          </div>
-
-          <div className="mt-6 grid gap-3 sm:grid-cols-2">
-            <div className="rounded-3xl border border-border/70 bg-card/80 px-4 py-4">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-primary/70">
-                Time window
-              </p>
-              <p className="mt-2 text-sm font-medium text-foreground">{slopmeterWindow}</p>
-            </div>
-            <div className="rounded-3xl border border-border/70 bg-card/80 px-4 py-4">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-primary/70">
-                Render target
-              </p>
-              <p className="mt-2 text-sm font-medium text-foreground">
-                {slopmeterSnapshot.rendered}
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-6 grid gap-3 sm:grid-cols-2">
-            {slopmeterSnapshot.tools.map((tool) => (
-              <div
-                key={tool.name}
-                className="rounded-3xl border border-border/70 bg-card/80 px-4 py-4"
-              >
-                <p className="text-sm font-semibold text-foreground">{tool.name}</p>
-                <p
-                  className={
-                    tool.detected
-                      ? "mt-2 text-sm font-medium text-emerald-300"
-                      : "mt-2 text-sm font-medium text-muted-foreground"
-                  }
-                >
-                  {tool.detected ? "Found" : "Not found"}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Card>
-
         <Card className="overflow-hidden p-4 sm:p-5">
           <div className="rounded-[1.75rem] border border-white/10 bg-slate-950/92 p-3">
             <div className="flex flex-wrap items-center justify-between gap-3 px-2 pb-3">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary/80">
-                  Slopmeter output
+                  Slopmeter snapshot
                 </p>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Dark-mode heatmap covering {slopmeterWindow}.
+                  Generated with `slopmeter` for {slopmeterWindow}.
                 </p>
               </div>
               <Badge className="border-white/12 bg-white/5 text-white/72">4000 x 1699</Badge>

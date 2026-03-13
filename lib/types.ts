@@ -57,6 +57,12 @@ export type EducationItem = {
   notes?: string;
 };
 
+export type PatentItem = {
+  title: string;
+  patentNumber: string;
+  issuedAt: string;
+};
+
 export type ResumePayload = {
   updatedAt: string;
   experience: ResumeSectionItem[];
@@ -66,6 +72,7 @@ export type ResumePayload = {
     tools: string[];
     soft: string[];
   };
+  patents: PatentItem[];
   publications: {
     title: string;
     publisher: string;

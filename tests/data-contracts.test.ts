@@ -14,8 +14,7 @@ describe("machine-readable payloads", () => {
 
   it("exports profile payload contract", () => {
     const profile: ProfilePayload = JSON.parse(readFileSync(join(root, "public", "profile.json"), "utf8"));
-    expect(typeof profile.name).toBe("string");
-    expect(profile.name.length).toBeGreaterThan(0);
+    expect(profile.name).toBe("John McChesney TenEyck Jr.");
     expect(isoDate(profile.updatedAt)).toBe(true);
     expect(Array.isArray(profile.socials)).toBe(true);
     expect(profile.socials.length).toBeGreaterThan(0);
@@ -39,6 +38,9 @@ describe("machine-readable payloads", () => {
     expect(Array.isArray(resumePayload.experience)).toBe(true);
     expect(Array.isArray(resumePayload.education)).toBe(true);
     expect(Array.isArray(resumePayload.skills.technical)).toBe(true);
+    expect(Array.isArray(resumePayload.patents)).toBe(true);
+    expect(resumePayload.patents.length).toBeGreaterThan(0);
+    expect(resumePayload.patents[0]?.patentNumber).toBe("12184814");
     expect(isoDate(resumePayload.updatedAt)).toBe(true);
     expect(resumePayload.links.find((link) => link.label === "LinkedIn")?.url).toBe(
       "https://www.linkedin.com/in/johnmteneyckjr"

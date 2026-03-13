@@ -14,6 +14,15 @@ function formatDateRange(startAt: string, endAt?: string) {
   return `${startAt} - ${end}`;
 }
 
+function formatPatentDate(issuedAt: string) {
+  return new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC"
+  }).format(new Date(`${issuedAt}T00:00:00Z`));
+}
+
 export default async function ResumePage() {
   const resume = await loadResume();
 
@@ -38,6 +47,23 @@ export default async function ResumePage() {
                   </li>
                 ))}
               </ul>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      <section data-site-loader-item className="space-y-4">
+        <h3 className="text-xl font-semibold">Patents</h3>
+        <div className="grid gap-4 lg:grid-cols-2">
+          {resume.patents.map((patent) => (
+            <Card key={patent.patentNumber} className="space-y-3 p-5">
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <h4 className="max-w-xl text-lg font-semibold">{patent.title}</h4>
+                <Badge variant="outline">US {patent.patentNumber}</Badge>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Issued {formatPatentDate(patent.issuedAt)}
+              </p>
             </Card>
           ))}
         </div>

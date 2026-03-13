@@ -5,7 +5,7 @@ import { PersonStructuredData, ProjectsStructuredData } from "@/components/struc
 
 export const metadata: Metadata = {
   title: {
-    absolute: "John M. TenEyck Jr. | JMCTE"
+    absolute: "John McChesney TenEyck Jr. | JMCTE"
   },
   description: "Home page for the jmcte.me portfolio."
 };

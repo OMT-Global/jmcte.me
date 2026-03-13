@@ -19,6 +19,10 @@ describe("route pages", () => {
     expect(screen.getByText("Slopmeter snapshot")).toBeInTheDocument();
     expect(screen.getByText(/Generated with `slopmeter`/)).toBeInTheDocument();
     expect(screen.getByAltText(/Slopmeter usage snapshot/i)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /US 12184814/i })).toHaveAttribute(
+      "href",
+      "https://patents.google.com/patent/US12184814B1/en"
+    );
     expect(screen.queryByText("Profile JSON")).not.toBeInTheDocument();
   });
 
@@ -39,5 +43,9 @@ describe("route pages", () => {
     expect(screen.getByRole("heading", { name: "Resume" })).toBeInTheDocument();
     expect(screen.getByText("Experience")).toBeInTheDocument();
     expect(screen.getByText("Patents")).toBeInTheDocument();
+    expect(screen.getAllByRole("link", { name: /US 12184814/i })[0]).toHaveAttribute(
+      "href",
+      "https://patents.google.com/patent/US12184814B1/en"
+    );
   });
 });

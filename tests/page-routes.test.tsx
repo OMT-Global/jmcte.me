@@ -17,7 +17,7 @@ describe("route pages", () => {
     expect(screen.getByText("Career trajectory")).toBeInTheDocument();
     expect(screen.getByText("Patent record")).toBeInTheDocument();
     expect(screen.getByText("Slopmeter snapshot")).toBeInTheDocument();
-    expect(screen.getByText(/Generated with `slopmeter`/)).toBeInTheDocument();
+    expect(screen.getByText(/Recent focus on AI-assisted coding/i)).toBeInTheDocument();
     expect(screen.getByAltText(/Slopmeter usage snapshot/i)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /US 12184814/i })).toHaveAttribute(
       "href",

@@ -658,7 +658,8 @@ export function HomeShowcase({ profile, projects, resume }: HomeShowcaseProps) {
                   Slopmeter snapshot
                 </p>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Generated with `slopmeter` for {slopmeterWindow}.
+                  Recent focus on AI-assisted coding, as evidenced through token usage captured by `slopmeter` for{" "}
+                  {slopmeterWindow}.
                 </p>
               </div>
               <Badge className="border-white/12 bg-white/5 text-white/72">4000 x 1699</Badge>

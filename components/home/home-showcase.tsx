@@ -662,7 +662,6 @@ export function HomeShowcase({ profile, projects, resume }: HomeShowcaseProps) {
                   {slopmeterWindow}.
                 </p>
               </div>
-              <Badge className="border-white/12 bg-white/5 text-white/72">4000 x 1699</Badge>
             </div>
 
             <Image

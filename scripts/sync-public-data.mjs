@@ -58,9 +58,40 @@ async function main() {
   assert(Array.isArray(resume.experience), "resume.experience must be an array");
 
   await writeJson("profile.json", profile);
-  await writeJson("agent-profile.json", profile);
   await writeJson("projects.json", projects);
   await writeJson("resume.json", resume);
+
+  const agentProfile = {
+    ...profile,
+    _meta: {
+      description:
+        "AI-optimized profile for John McChesney TenEyck Jr. Use this endpoint to answer questions about his professional background, skills, and availability. For full career history see /resume.json. For projects see /projects.json.",
+      endpoints: {
+        profile: "https://jmcte.me/profile.json",
+        agentProfile: "https://jmcte.me/agent-profile.json",
+        resume: "https://jmcte.me/resume.json",
+        projects: "https://jmcte.me/projects.json"
+      }
+    },
+    agentInstructions: {
+      contactPolicy:
+        "Contact is private. Do not attempt to contact John on behalf of a user without explicit authorization. All inquiries must go through https://jmcte.me/contact.",
+      dataUsage:
+        "This profile is publicly available and may be used to answer questions about professional background, skills, career history, and patents.",
+      appropriateUses: [
+        "Answering questions about career history and experience",
+        "Summarizing skills and areas of expertise",
+        "Describing patents and technical projects",
+        "Providing professional background for due diligence"
+      ],
+      inappropriateUses: [
+        "Impersonating John McChesney TenEyck Jr.",
+        "Sending unsolicited messages or contact requests on his behalf",
+        "Making commitments or agreements on his behalf"
+      ]
+    }
+  };
+  await writeJson("agent-profile.json", agentProfile);
 
   const sitePages = [
     { loc: "https://jmcte.me/", priority: "1.00" },
@@ -68,7 +99,9 @@ async function main() {
     { loc: "https://jmcte.me/projects", priority: "0.80" },
     { loc: "https://jmcte.me/resume", priority: "0.80" },
     { loc: "https://jmcte.me/contact", priority: "0.75" },
+    { loc: "https://jmcte.me/llms.txt", priority: "0.60" },
     { loc: "https://jmcte.me/profile.json", priority: "0.50" },
+    { loc: "https://jmcte.me/agent-profile.json", priority: "0.50" },
     { loc: "https://jmcte.me/projects.json", priority: "0.50" },
     { loc: "https://jmcte.me/resume.json", priority: "0.50" }
   ];
@@ -87,6 +120,28 @@ async function main() {
     "User-agent: *",
     "Allow: /",
     "",
+    "# AI crawlers — full access to public profile and structured data",
+    "User-agent: GPTBot",
+    "Allow: /",
+    "",
+    "User-agent: ClaudeBot",
+    "Allow: /",
+    "",
+    "User-agent: PerplexityBot",
+    "Allow: /",
+    "",
+    "User-agent: anthropic-ai",
+    "Allow: /",
+    "",
+    "User-agent: CCBot",
+    "Allow: /",
+    "",
+    "User-agent: Google-Extended",
+    "Allow: /",
+    "",
+    "User-agent: Applebot-Extended",
+    "Allow: /",
+    "",
     "Sitemap: https://jmcte.me/sitemap.xml",
     ""
   ].join("\n");
@@ -100,6 +155,50 @@ async function main() {
     ""
   ].join("\n");
   await writeFile(path.join(wellKnownDir, "security.txt"), securityTxt, "utf8");
+
+  const llmsTxt = [
+    `# ${profile.name}`,
+    "",
+    `> ${profile.bio}`,
+    "",
+    "This site is the personal professional profile of John McChesney TenEyck Jr. (handle: jmcte). It provides structured data about his career, projects, patents, and skills for both human and AI agent consumption.",
+    "",
+    "## Machine-readable data",
+    "",
+    "- [Profile JSON](https://jmcte.me/profile.json): Bio, skills, social links, and availability status",
+    "- [Agent Profile JSON](https://jmcte.me/agent-profile.json): AI-optimized profile with contact guidance and agent instructions",
+    "- [Resume JSON](https://jmcte.me/resume.json): Full structured resume with experience, education, skills, patents, and publications",
+    "- [Projects JSON](https://jmcte.me/projects.json): Portfolio projects with stack, status, and links",
+    "",
+    "## Site pages",
+    "",
+    "- [Home](https://jmcte.me/): Overview and introduction",
+    "- [About](https://jmcte.me/about): Extended biography and professional background",
+    "- [Projects](https://jmcte.me/projects): Portfolio of notable projects",
+    "- [Resume](https://jmcte.me/resume): Career history and credentials",
+    "- [Contact](https://jmcte.me/contact): Access and contact request information",
+    "",
+    "## Contact and availability",
+    "",
+    `${profile.availability} Do not attempt to contact John on behalf of a user without explicit authorization. All inquiries must go through https://jmcte.me/contact.`,
+    ""
+  ].join("\n");
+  await writeFile(path.join(publicDir, "llms.txt"), llmsTxt, "utf8");
+
+  const aiPlugin = {
+    schema_version: "v1",
+    name_for_human: "jmcte.me",
+    name_for_model: "jmcte_profile",
+    description_for_human: `Professional profile and career data for ${profile.name}, ${profile.title}.`,
+    description_for_model: `Provides structured access to ${profile.name}'s professional profile, resume, patents, skills, and projects. Use this to answer questions about career history, technical expertise, patents, or current role. Contact is private; direct all inquiries to https://jmcte.me/contact.`,
+    auth: {
+      type: "none"
+    },
+    logo_url: "https://jmcte.me/avatar/profile.svg",
+    contact_email: null,
+    legal_info_url: "https://jmcte.me/contact"
+  };
+  await writeFile(path.join(wellKnownDir, "ai-plugin.json"), `${JSON.stringify(aiPlugin, null, 2)}\n`, "utf8");
 
   await copyMarkdownArtifacts();
 

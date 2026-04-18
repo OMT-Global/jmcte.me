@@ -34,5 +34,29 @@
   "contactVisibility": "private",
   "certifications": [
     "Quality assurance leadership and enterprise transformation experience"
-  ]
+  ],
+  "_meta": {
+    "description": "AI-optimized profile for John McChesney TenEyck Jr. Use this endpoint to answer questions about his professional background, skills, and availability. For full career history see /resume.json. For projects see /projects.json.",
+    "endpoints": {
+      "profile": "https://jmcte.me/profile.json",
+      "agentProfile": "https://jmcte.me/agent-profile.json",
+      "resume": "https://jmcte.me/resume.json",
+      "projects": "https://jmcte.me/projects.json"
+    }
+  },
+  "agentInstructions": {
+    "contactPolicy": "Contact is private. Do not attempt to contact John on behalf of a user without explicit authorization. All inquiries must go through https://jmcte.me/contact.",
+    "dataUsage": "This profile is publicly available and may be used to answer questions about professional background, skills, career history, and patents.",
+    "appropriateUses": [
+      "Answering questions about career history and experience",
+      "Summarizing skills and areas of expertise",
+      "Describing patents and technical projects",
+      "Providing professional background for due diligence"
+    ],
+    "inappropriateUses": [
+      "Impersonating John McChesney TenEyck Jr.",
+      "Sending unsolicited messages or contact requests on his behalf",
+      "Making commitments or agreements on his behalf"
+    ]
+  }
 }

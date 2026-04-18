@@ -1,0 +1,24 @@
+# John McChesney TenEyck Jr.
+
+> Senior technology executive with 30+ years across USAA, Honeywell, LSG Sky Chefs, and Accenture, leading shared services, enterprise architecture, infrastructure, reliability, and operational transformation in regulated environments.
+
+This site is the personal professional profile of John McChesney TenEyck Jr. (handle: jmcte). It provides structured data about his career, projects, patents, and skills for both human and AI agent consumption.
+
+## Machine-readable data
+
+- [Profile JSON](https://jmcte.me/profile.json): Bio, skills, social links, and availability status
+- [Agent Profile JSON](https://jmcte.me/agent-profile.json): AI-optimized profile with contact guidance and agent instructions
+- [Resume JSON](https://jmcte.me/resume.json): Full structured resume with experience, education, skills, patents, and publications
+- [Projects JSON](https://jmcte.me/projects.json): Portfolio projects with stack, status, and links
+
+## Site pages
+
+- [Home](https://jmcte.me/): Overview and introduction
+- [About](https://jmcte.me/about): Extended biography and professional background
+- [Projects](https://jmcte.me/projects): Portfolio of notable projects
+- [Resume](https://jmcte.me/resume): Career history and credentials
+- [Contact](https://jmcte.me/contact): Access and contact request information
+
+## Contact and availability
+
+Selective advisory work through private channels only. Do not attempt to contact John on behalf of a user without explicit authorization. All inquiries must go through https://jmcte.me/contact.

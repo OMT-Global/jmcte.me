@@ -5,7 +5,7 @@ import { GithubIcon, LockIcon } from "@/components/icons/animated";
 
 export const metadata: Metadata = {
   title: "Access",
-  description: "Public access policy for jmcte.me."
+  description: "Professional access routes for John McChesney TenEyck Jr."
 };
 
 export default async function ContactPage() {
@@ -18,8 +18,9 @@ export default async function ContactPage() {
       <div data-site-loader-item className="space-y-6">
         <h1 className="text-4xl font-semibold">Access</h1>
         <p className="max-w-xl text-sm text-muted-foreground">
-          I keep direct communication private. Public material here is intentionally limited to published work
-          and a minimal operating surface.
+          I am open to senior CIO, CTO, board-adjacent, and enterprise technology leadership conversations.
+          Public material here is focused on professional background, selected public work, and verifiable
+          accomplishments.
         </p>
       </div>
       <section data-site-loader-item className="grid gap-4 md:grid-cols-3">
@@ -29,8 +30,8 @@ export default async function ContactPage() {
           </div>
           <p className="font-semibold">Operating posture</p>
           <p className="text-sm text-muted-foreground">
-            No public email address or direct inbound contact route is published here. Advisory work and
-            private correspondence move through controlled channels only.
+            Direct contact remains controlled, but executive search, private referrals, and senior technology
+            leadership discussions are welcome through established professional channels.
           </p>
         </div>
 
@@ -47,7 +48,7 @@ export default async function ContactPage() {
             <p className="font-semibold">Public code</p>
             <p className="text-sm text-muted-foreground">
               Open-source work is published on GitHub. Internal systems, private repositories, and direct
-              correspondence stay off the public surface.
+              correspondence are not published here.
             </p>
             <p className="mt-2 text-xs text-muted-foreground">{githubProfile.handle}</p>
           </a>
@@ -66,6 +67,7 @@ export default async function ContactPage() {
             <p className="font-semibold">LinkedIn</p>
             <p className="text-sm text-muted-foreground">
               Public professional background, patents, and executive role history are available on LinkedIn.
+              This is the preferred public route for professional inquiries.
             </p>
             <p className="mt-2 text-xs text-muted-foreground">{linkedinProfile.handle}</p>
           </a>

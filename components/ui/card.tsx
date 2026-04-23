@@ -8,15 +8,15 @@ type CardProps = HTMLAttributes<HTMLElement> & {
 export function Card({ className, variant = "default", ...props }: CardProps) {
   const variantClass =
     variant === "accent"
-      ? "bg-primary/10 border-primary/35"
+      ? "border-primary/30 bg-primary/10"
       : variant === "muted"
-        ? "bg-muted/45 border-border/20"
-        : "bg-card/95 hover:border-primary/40 hover:bg-card";
+        ? "border-border/25 bg-muted/40"
+        : "border-white/12 bg-card/88";
 
   return (
     <section
       className={cn(
-        "rounded-2xl border border-white/15 bg-card text-card-foreground shadow-sm transition shadow-black/10 transition-colors",
+        "rounded-lg border text-card-foreground shadow-sm shadow-black/10 transition-colors hover:border-primary/35",
         variantClass,
         className
       )}

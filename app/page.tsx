@@ -7,7 +7,8 @@ export const metadata: Metadata = {
   title: {
     absolute: "John McChesney TenEyck Jr. | JMCTE"
   },
-  description: "Home page for the jmcte.me portfolio."
+  description:
+    "CIO and CTO-level executive technology portfolio for John McChesney TenEyck Jr."
 };
 
 export default async function HomePage() {

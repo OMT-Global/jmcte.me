@@ -39,11 +39,11 @@ type Lane = {
 };
 
 const slopmeterSnapshot = {
-  startDate: "2025-03-13",
-  endDate: "2026-03-13",
+  startDate: "2025-04-16",
+  endDate: "2026-04-16",
   image: {
     src: "/heatmap-last-year.png",
-    alt: "Slopmeter usage snapshot for March 13, 2025 through March 13, 2026.",
+    alt: "Slopmeter usage snapshot for April 16, 2025 through April 16, 2026.",
     width: 4000,
     height: 1699
   }
@@ -51,38 +51,38 @@ const slopmeterSnapshot = {
 
 const signalMetrics = [
   {
-    value: "30+",
-    label: "Years in enterprise delivery"
+    value: "2,500+",
+    label: "Resources led"
   },
   {
-    value: "100+",
-    label: "Architects and fellows led"
+    value: "$800M",
+    label: "Budget responsibility"
   },
   {
-    value: "$1B",
-    label: "Transformation scope directed"
+    value: "$100M",
+    label: "Annual IT projects overseen"
   }
 ];
 
 const operatingLanes: Lane[] = [
   {
-    title: "Architecture",
-    summary: "Long-horizon platform direction for complex regulated estates.",
+    title: "Enterprise architecture",
+    summary: "Technology direction across complex financial-services platforms and portfolios.",
     icon: ShieldCheckIcon
   },
   {
-    title: "Reliability",
-    summary: "Recoverability, routing, quality, and operational calm under load.",
+    title: "Operational resilience",
+    summary: "Infrastructure, recoverability, reliability, and execution discipline under pressure.",
     icon: FolderKanbanIcon
   },
   {
-    title: "Governance",
-    summary: "Executive translation, control points, and delivery discipline.",
+    title: "Executive governance",
+    summary: "Budget, PMO, vendor, and control structures tied to business outcomes.",
     icon: FileTextIcon
   },
   {
-    title: "Private access",
-    summary: "Tight public surface with selective advisory work through private channels.",
+    title: "Modernization",
+    summary: "Cloud, data, AI, shared services, and platform simplification at enterprise scale.",
     icon: LockIcon
   }
 ];
@@ -172,21 +172,21 @@ export function HomeShowcase({ profile, projects, resume }: HomeShowcaseProps) {
   const slopmeterWindow = `${formatSnapshotDate(slopmeterSnapshot.startDate)} - ${formatSnapshotDate(slopmeterSnapshot.endDate)}`;
 
   return (
-    <div className="space-y-6 sm:space-y-8">
+    <div className="space-y-8 sm:space-y-10">
       <section
         data-site-loader-item
         style={revealStyle(0)}
-        className="grid gap-6 xl:grid-cols-[1.2fr_0.8fr]"
+        className="grid min-h-[calc(100svh-7rem)] gap-6 xl:grid-cols-[1.2fr_0.8fr]"
       >
         <Card className="home-hero-panel overflow-hidden p-7 sm:p-8 xl:p-10">
           <div className="relative z-10 flex h-full flex-col justify-between gap-8">
             <div className="space-y-6">
               <div className="flex flex-wrap gap-2">
                 <Badge variant="solid" className="bg-primary/90 text-primary-foreground">
-                  Professional Portfolio
+                  Executive Technology Portfolio
                 </Badge>
-                <Badge className="border-white/20 bg-white/10 text-white">30+ Years</Badge>
-                <Badge className="border-white/20 bg-white/10 text-white">Low-profile Surface</Badge>
+                <Badge className="border-white/20 bg-white/10 text-white">CIO / CTO</Badge>
+                <Badge className="border-white/20 bg-white/10 text-white">Financial Services</Badge>
               </div>
 
               <div className="space-y-4">
@@ -198,7 +198,7 @@ export function HomeShowcase({ profile, projects, resume }: HomeShowcaseProps) {
                   {profile.bio}
                 </p>
                 <p className="text-xs font-semibold uppercase tracking-[0.32em] text-white/50 sm:text-sm">
-                  {profile.location} / {profile.availability}
+                  {profile.location}
                 </p>
               </div>
             </div>
@@ -250,10 +250,10 @@ export function HomeShowcase({ profile, projects, resume }: HomeShowcaseProps) {
             <div className="flex items-center justify-between gap-4">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary/80">
-                  Signal map
+                  Leadership map
                 </p>
                 <p className="mt-2 max-w-xs text-sm text-muted-foreground">
-                  Architecture, reliability, governance, and public restraint.
+                  Architecture, operations, resilience, and modernization.
                 </p>
               </div>
               <ShieldCheckIcon
@@ -263,8 +263,8 @@ export function HomeShowcase({ profile, projects, resume }: HomeShowcaseProps) {
               />
             </div>
 
-            <div className="home-radar-shell relative mt-6 aspect-square rounded-[2rem] border border-white/10 bg-slate-950/70">
-              <div className="home-radar-grid absolute inset-0 rounded-[2rem]" aria-hidden />
+            <div className="home-radar-shell relative mt-6 aspect-square rounded-lg border border-white/10 bg-slate-950/70">
+              <div className="home-radar-grid absolute inset-0 rounded-lg" aria-hidden />
               <div className="absolute inset-[14%] rounded-full border border-white/12" aria-hidden />
               <div className="absolute inset-[28%] rounded-full border border-white/12" aria-hidden />
               <div className="absolute inset-[42%] rounded-full border border-white/12" aria-hidden />
@@ -325,16 +325,16 @@ export function HomeShowcase({ profile, projects, resume }: HomeShowcaseProps) {
               <div className="absolute right-5 bottom-5 left-5 grid gap-3 sm:grid-cols-2">
                 <div className="rounded-2xl border border-white/10 bg-slate-950/72 p-3 backdrop-blur-sm">
                   <p className="text-[11px] uppercase tracking-[0.3em] text-white/45">
-                    Surface
+                    Scope
                   </p>
-                  <p className="mt-2 text-sm font-medium text-white">Selective and deliberate</p>
+                  <p className="mt-2 text-sm font-medium text-white">Global regulated enterprise</p>
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-slate-950/72 p-3 backdrop-blur-sm">
                   <p className="text-[11px] uppercase tracking-[0.3em] text-white/45">
-                    Bias
+                    Mode
                   </p>
                   <p className="mt-2 text-sm font-medium text-white">
-                    Systems that stay calm under pressure
+                    Disciplined execution under pressure
                   </p>
                 </div>
               </div>
@@ -343,7 +343,7 @@ export function HomeShowcase({ profile, projects, resume }: HomeShowcaseProps) {
 
           <Card variant="muted" className="p-6">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary/80">
-              Public surface
+              Professional channels
             </p>
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
               {githubProfile ? (
@@ -373,7 +373,7 @@ export function HomeShowcase({ profile, projects, resume }: HomeShowcaseProps) {
                 <div className="flex items-center justify-between gap-3">
                   <div>
                     <p className="text-sm font-semibold text-foreground">Access policy</p>
-                    <p className="mt-1 text-sm text-muted-foreground">Private inbound only</p>
+                    <p className="mt-1 text-sm text-muted-foreground">Executive conversations</p>
                   </div>
                   <LockIcon
                     size={18}
@@ -399,7 +399,7 @@ export function HomeShowcase({ profile, projects, resume }: HomeShowcaseProps) {
                 Operating lanes
               </p>
               <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
-                A lighter page can still signal depth.
+                Enterprise-scale leadership with delivery discipline.
               </h2>
             </div>
           </div>
@@ -411,7 +411,7 @@ export function HomeShowcase({ profile, projects, resume }: HomeShowcaseProps) {
               return (
                 <article
                   key={lane.title}
-                  className="rounded-3xl border border-border/70 bg-card/70 p-5"
+                  className="rounded-lg border border-border/70 bg-card/70 p-5"
                 >
                   <Icon size={18} className="text-primary" aria-hidden />
                   <h3 className="mt-4 text-lg font-semibold text-foreground">{lane.title}</h3>
@@ -430,7 +430,7 @@ export function HomeShowcase({ profile, projects, resume }: HomeShowcaseProps) {
             {trajectory.map((stop, index) => (
               <div
                 key={stop.org}
-                className="grid gap-3 rounded-3xl border border-border/70 bg-card/65 px-5 py-4 sm:grid-cols-[auto_1fr_auto]"
+                className="grid gap-3 rounded-lg border border-border/70 bg-card/65 px-5 py-4 sm:grid-cols-[auto_1fr_auto]"
               >
                 <div className="flex items-center gap-3">
                   <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/12 text-sm font-semibold text-primary">
@@ -475,19 +475,19 @@ export function HomeShowcase({ profile, projects, resume }: HomeShowcaseProps) {
           </div>
 
           <div className="mt-6 grid gap-3 sm:grid-cols-3">
-            <div className="rounded-3xl border border-border/70 bg-card/80 px-4 py-4">
+            <div className="rounded-lg border border-border/70 bg-card/80 px-4 py-4">
               <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-primary/70">
                 Listed grants
               </p>
               <p className="mt-2 text-2xl font-semibold text-foreground">{resume.patents.length}</p>
             </div>
-            <div className="rounded-3xl border border-border/70 bg-card/80 px-4 py-4">
+            <div className="rounded-lg border border-border/70 bg-card/80 px-4 py-4">
               <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-primary/70">
                 Title families
               </p>
               <p className="mt-2 text-2xl font-semibold text-foreground">{patentFamilies}</p>
             </div>
-            <div className="rounded-3xl border border-border/70 bg-card/80 px-4 py-4">
+            <div className="rounded-lg border border-border/70 bg-card/80 px-4 py-4">
               <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-primary/70">
                 Active years
               </p>
@@ -517,7 +517,7 @@ export function HomeShowcase({ profile, projects, resume }: HomeShowcaseProps) {
                 href={patent.url}
                 target="_blank"
                 rel="noreferrer"
-                className="group block rounded-3xl border border-border/70 bg-card/65 px-5 py-4 transition hover:border-primary/40 hover:bg-card/80"
+                className="group block rounded-lg border border-border/70 bg-card/65 px-5 py-4 transition hover:border-primary/40 hover:bg-card/80"
               >
                 <div className="flex flex-wrap items-start justify-between gap-3">
                   <div className="space-y-2">
@@ -545,10 +545,10 @@ export function HomeShowcase({ profile, projects, resume }: HomeShowcaseProps) {
           <div className="flex items-start justify-between gap-4">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary/80">
-                Public proof
+                Selected work
               </p>
               <h2 className="mt-3 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
-                Featured public work
+                Featured public repository
               </h2>
             </div>
             <FolderKanbanIcon size={20} className="text-primary" aria-hidden />
@@ -592,7 +592,7 @@ export function HomeShowcase({ profile, projects, resume }: HomeShowcaseProps) {
         <div className="grid gap-6">
           <Card className="p-6">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary/80">
-              Signal stack
+              Capability mix
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
               {publicSkillSet.map((skill) => (
@@ -605,7 +605,7 @@ export function HomeShowcase({ profile, projects, resume }: HomeShowcaseProps) {
 
           <Card variant="muted" className="p-6">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary/80">
-              Guided entry points
+              Explore
             </p>
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
               <Link
@@ -651,26 +651,29 @@ export function HomeShowcase({ profile, projects, resume }: HomeShowcaseProps) {
         className="grid gap-6"
       >
         <Card className="overflow-hidden p-4 sm:p-5">
-          <div className="rounded-[1.75rem] border border-white/10 bg-slate-950/92 p-3">
+          <div className="rounded-lg border border-white/10 bg-slate-950/92 p-3">
             <div className="flex flex-wrap items-center justify-between gap-3 px-2 pb-3">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary/80">
-                  Slopmeter snapshot
+                  AI development activity
                 </p>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Recent focus on AI-assisted coding, as evidenced through token usage captured by `slopmeter` for{" "}
+                  Token-usage snapshot from local AI-assisted development activity for{" "}
                   {slopmeterWindow}.
                 </p>
               </div>
             </div>
 
-            <Image
-              src={slopmeterSnapshot.image.src}
-              alt={slopmeterSnapshot.image.alt}
-              width={slopmeterSnapshot.image.width}
-              height={slopmeterSnapshot.image.height}
-              className="h-auto w-full rounded-[1.25rem] border border-white/5"
-            />
+            <div className="overflow-x-auto">
+              <Image
+                src={slopmeterSnapshot.image.src}
+                alt={slopmeterSnapshot.image.alt}
+                width={slopmeterSnapshot.image.width}
+                height={slopmeterSnapshot.image.height}
+                loading="eager"
+                className="h-auto min-w-[42rem] rounded-lg border border-white/5 sm:min-w-0 sm:w-full"
+              />
+            </div>
           </div>
         </Card>
       </section>

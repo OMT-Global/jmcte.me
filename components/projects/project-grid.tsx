@@ -8,6 +8,13 @@ import { cn } from "@/lib/utils";
 import { ArrowUpRightIcon } from "@/components/icons/animated";
 
 type ProjectFilter = "all" | "featured" | "completed" | "active";
+type ProjectWithDetails = ProjectPayload & { details?: string };
+
+const sourceOrder = ["OMT-Global", "jmcte"] as const;
+const sourceDescriptions: Record<string, string> = {
+  "OMT-Global": "Personal and family organization",
+  jmcte: "Individual public work"
+};
 
 function getProjectExcerpt(details?: string) {
   if (!details) {
@@ -25,16 +32,19 @@ function getProjectExcerpt(details?: string) {
 function ProjectCard({
   project
 }: {
-  project: ProjectPayload & { details?: string };
+  project: ProjectWithDetails;
 }) {
   return (
     <Card className="space-y-4 p-5">
       <div className="space-y-2">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <h3 className="text-xl font-semibold">{project.title}</h3>
-          <Badge variant={project.status === "completed" ? "solid" : "outline"}>
-            {project.status}
-          </Badge>
+          <div className="flex flex-wrap gap-2">
+            {project.source ? <Badge variant="outline">{project.source.label}</Badge> : null}
+            <Badge variant={project.status === "completed" ? "solid" : "outline"}>
+              {project.status}
+            </Badge>
+          </div>
         </div>
         <p className="text-sm text-muted-foreground">{project.summary}</p>
       </div>
@@ -79,7 +89,7 @@ function ProjectCard({
 export default function ProjectGrid({
   projects
 }: {
-  projects: (ProjectPayload & { details?: string })[];
+  projects: ProjectWithDetails[];
 }) {
   const [statusFilter, setStatusFilter] = useState<ProjectFilter>("all");
   const visibleProjects = useMemo(() => {
@@ -94,6 +104,35 @@ export default function ProjectGrid({
     }
     return projects;
   }, [projects, statusFilter]);
+  const groupedProjects = useMemo(() => {
+    const groups = new Map<string, ProjectWithDetails[]>();
+
+    for (const project of visibleProjects) {
+      const sourceLabel = project.source?.label ?? "Other public work";
+      const group = groups.get(sourceLabel) ?? [];
+      group.push(project);
+      groups.set(sourceLabel, group);
+    }
+
+    return [...groups.entries()].sort(([left], [right]) => {
+      const leftIndex = sourceOrder.indexOf(left as (typeof sourceOrder)[number]);
+      const rightIndex = sourceOrder.indexOf(right as (typeof sourceOrder)[number]);
+
+      if (leftIndex === -1 && rightIndex === -1) {
+        return left.localeCompare(right);
+      }
+
+      if (leftIndex === -1) {
+        return 1;
+      }
+
+      if (rightIndex === -1) {
+        return -1;
+      }
+
+      return leftIndex - rightIndex;
+    });
+  }, [visibleProjects]);
 
   const filterOptions = [
     { key: "all", label: "All" },
@@ -132,9 +171,21 @@ export default function ProjectGrid({
         {projectCountLabel}
       </p>
 
-      <div id="project-results-grid" className="grid gap-4 md:grid-cols-2">
-        {visibleProjects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
+      <div id="project-results-grid" className="space-y-8">
+        {groupedProjects.map(([sourceLabel, sourceProjects]) => (
+          <section key={sourceLabel} className="space-y-4">
+            <div>
+              <h3 className="text-xl font-semibold">{sourceLabel}</h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                {sourceProjects[0]?.source?.description ?? sourceDescriptions[sourceLabel] ?? "Public work"}
+              </p>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2">
+              {sourceProjects.map((project) => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
+            </div>
+          </section>
         ))}
       </div>
 

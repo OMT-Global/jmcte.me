@@ -157,15 +157,14 @@ export function SiteLoadingScreen() {
             <div className="flex items-center justify-between gap-6">
               <div className="space-y-3">
                 <p className="font-[family:var(--font-code)] text-[11px] uppercase tracking-[0.42em] text-accent">
-                  JMCTE // public surface
+                  JMCTE
                 </p>
                 <div className="space-y-2">
                   <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-                    Establishing signal
+                    Preparing portfolio
                   </h2>
                   <p className="max-w-md text-sm leading-6 text-muted-foreground sm:text-base">
-                    Loading typography, layout, and public artifacts behind a
-                    low-profile operator shell.
+                    Loading typography, content, and links for the professional portfolio.
                   </p>
                 </div>
               </div>
@@ -202,9 +201,9 @@ export function SiteLoadingScreen() {
               </div>
 
               <div className="flex flex-wrap items-center justify-between gap-3 border-t border-border/50 pt-4 font-[family:var(--font-code)] text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
-                <span>Fonts warming</span>
-                <span>Artifacts staging</span>
-                <span>Surface locking</span>
+                <span>Typography</span>
+                <span>Content</span>
+                <span>Links</span>
               </div>
             </div>
           </div>

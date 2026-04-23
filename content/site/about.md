@@ -1,11 +1,13 @@
-I currently serve as Senior Vice President and Chief Information Officer for Shared Services and Infrastructure at USAA. Over more than three decades, I have helped large organizations modernize how they build, secure, and operate technology. My public background spans leadership roles at USAA, Honeywell, LSG Sky Chefs, and Accenture, with emphasis on:
+I am an enterprise technology executive with 25+ years leading architecture, infrastructure, shared services, operations, and large-scale transformation in regulated global environments. My public background spans senior leadership roles at USAA, Honeywell, LSG Sky Chefs, and Accenture, with emphasis on:
 
-- Enterprise architecture, IT governance, and executive technology leadership
-- Reliability, quality assurance, and operational resilience
-- Shared services, infrastructure modernization, and secure delivery in regulated environments
+- CIO and CTO-level technology leadership in financial services and other regulated environments
+- Enterprise architecture, infrastructure, shared services, operations, and IT governance
+- Operational resilience, modernization, cloud strategy, and disciplined execution at scale
+- Patent-backed innovation across service routing, resource allocation, and applied machine learning
 
 Recent highlights include:
 
-- Currently lead shared services and infrastructure technology at USAA after previously leading enterprise architecture across the company.
-- Served as interim CIO for USAA Property & Casualty, with accountability for a $700M technology budget and a 1,200-person organization.
-- Rebuilt testing, governance, and modernization programs to cut waste, harden delivery, and improve outcomes at enterprise scale.
+- Most recently led a 2,500-person engineering, infrastructure, and IT business services organization with $800M budget responsibility and oversight of $100M in annual IT projects.
+- Led enterprise architecture across USAA's multi-line business, including Life, Property & Casualty, Banking, and enterprise technology.
+- Served as interim CIO for USAA Property & Casualty, leading 1,200+ resources during a period of major transition and core-platform modernization.
+- Built resilient, cost-disciplined technology organizations that reduce complexity, improve service, and align technology investment to business outcomes.

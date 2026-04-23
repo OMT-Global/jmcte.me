@@ -28,6 +28,10 @@ export type ProjectPayload = {
   title: string;
   summary: string;
   stack: string[];
+  source?: {
+    label: string;
+    description: string;
+  };
   github?: string;
   url?: string;
   status: "completed" | "active" | "maintenance" | "paused";

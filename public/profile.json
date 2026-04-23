@@ -1,11 +1,11 @@
 {
   "name": "John McChesney TenEyck Jr.",
   "handle": "jmcte",
-  "title": "Senior Vice President, Chief Information Officer, Shared Services and Infrastructure",
-  "bio": "Senior technology executive with 30+ years across USAA, Honeywell, LSG Sky Chefs, and Accenture, leading shared services, enterprise architecture, infrastructure, reliability, and operational transformation in regulated environments.",
+  "title": "CIO / CTO | Enterprise Technology Executive | Financial Services, Architecture, Infrastructure and Operations",
+  "bio": "Enterprise technology executive with 25+ years leading architecture, infrastructure, shared services, operations, and large-scale transformation in regulated global environments. Most recently led a 2,500-person engineering, infrastructure, and IT business services organization with $800M budget responsibility and oversight of $100M in annual IT projects.",
   "location": "Texas, USA",
   "website": "https://jmcte.me",
-  "updatedAt": "2026-03-13T20:12:00Z",
+  "updatedAt": "2026-04-23T04:30:00Z",
   "socials": [
     {
       "label": "GitHub",
@@ -18,18 +18,20 @@
       "handle": "johnmteneyckjr"
     }
   ],
-  "availability": "Selective advisory work through private channels only.",
+  "availability": "Open to senior CIO, CTO, and enterprise technology leadership conversations.",
   "pronouns": "he/him",
   "skills": [
-    "Enterprise Architecture",
-    "IT Governance",
-    "Cloud Transformation",
-    "Quality Assurance",
     "Technology Strategy",
+    "Enterprise Architecture",
+    "Technology Operations",
+    "Operational Resilience",
+    "Cloud Strategy",
+    "Digital Transformation",
+    "IT Governance",
     "Infrastructure Modernization",
-    "Digital Innovation",
-    "Leadership Development",
-    "Vendor Management"
+    "Artificial Intelligence",
+    "Vendor Management",
+    "IT Financial Management"
   ],
   "contactVisibility": "private",
   "certifications": [

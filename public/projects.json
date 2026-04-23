@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-08T12:00:00Z",
+  "generatedAt": "2026-04-23T04:30:00Z",
   "projects": [
     {
       "id": "openclaw-ops-tooling",
@@ -12,12 +12,176 @@
         "Kubernetes",
         "GitHub Actions"
       ],
+      "source": {
+        "label": "jmcte",
+        "description": "Individual public work"
+      },
       "github": "https://github.com/jmcte/openclaw",
       "url": "https://github.com/jmcte/openclaw",
       "status": "active",
       "featured": true,
       "startedAt": "2024-11-01",
       "finishedAt": "2025-12-31"
+    },
+    {
+      "id": "omt-axiom",
+      "title": "Axiom programming language",
+      "summary": "Experimental, inspectable programming language with a hand-written compiler, type checker, bytecode VM, and Rust-based native bootstrap stage.",
+      "stack": [
+        "Rust",
+        "Compiler",
+        "Type Checker",
+        "Bytecode VM"
+      ],
+      "source": {
+        "label": "OMT-Global",
+        "description": "Personal and family organization"
+      },
+      "github": "https://github.com/OMT-Global/axiom",
+      "url": "https://github.com/OMT-Global/axiom",
+      "status": "active",
+      "featured": false,
+      "startedAt": "2026-01-01"
+    },
+    {
+      "id": "omt-screensaver",
+      "title": "Split-flap macOS screensaver",
+      "summary": "Swift macOS screensaver that simulates the mechanical split-flap display style used in airports and train stations.",
+      "stack": [
+        "Swift",
+        "macOS",
+        "Screen Saver",
+        "Animation"
+      ],
+      "source": {
+        "label": "OMT-Global",
+        "description": "Personal and family organization"
+      },
+      "github": "https://github.com/OMT-Global/Screensaver",
+      "url": "https://github.com/OMT-Global/Screensaver",
+      "status": "active",
+      "featured": false,
+      "startedAt": "2026-01-01"
+    },
+    {
+      "id": "omt-synology-api",
+      "title": "Synology API Python wrapper",
+      "summary": "Python wrapper around Synology APIs for automation, DSM operations, and infrastructure integration work.",
+      "stack": [
+        "Python",
+        "Synology DSM",
+        "API Client",
+        "Automation"
+      ],
+      "source": {
+        "label": "OMT-Global",
+        "description": "Personal and family organization"
+      },
+      "github": "https://github.com/OMT-Global/synology-api",
+      "url": "https://github.com/OMT-Global/synology-api",
+      "status": "active",
+      "featured": false,
+      "startedAt": "2026-01-01"
+    },
+    {
+      "id": "omt-apw",
+      "title": "Apple Passwords CLI",
+      "summary": "Rust command-line interface for Apple Passwords and iCloud Keychain workflows.",
+      "stack": [
+        "Rust",
+        "CLI",
+        "macOS",
+        "Apple Passwords"
+      ],
+      "source": {
+        "label": "OMT-Global",
+        "description": "Personal and family organization"
+      },
+      "github": "https://github.com/OMT-Global/apw",
+      "url": "https://github.com/OMT-Global/apw",
+      "status": "active",
+      "featured": false,
+      "startedAt": "2026-01-01"
+    },
+    {
+      "id": "omt-github-runner-fleet",
+      "title": "GitHub runner fleet",
+      "summary": "Self-hosted GitHub runner fleet for Synology Linux pools and ephemeral Lume macOS virtual machines.",
+      "stack": [
+        "TypeScript",
+        "GitHub Actions",
+        "Synology",
+        "macOS VMs"
+      ],
+      "source": {
+        "label": "OMT-Global",
+        "description": "Personal and family organization"
+      },
+      "github": "https://github.com/OMT-Global/github-runner-fleet",
+      "url": "https://github.com/OMT-Global/github-runner-fleet",
+      "status": "active",
+      "featured": false,
+      "startedAt": "2026-01-01"
+    },
+    {
+      "id": "omt-bootstrap",
+      "title": "Manifest-first bootstrap control plane",
+      "summary": "Manifest-first control plane for repo scaffolding, GitHub governance, and portable agent profiles.",
+      "stack": [
+        "TypeScript",
+        "GitHub Governance",
+        "Project Bootstrap",
+        "Agent Profiles"
+      ],
+      "source": {
+        "label": "OMT-Global",
+        "description": "Personal and family organization"
+      },
+      "github": "https://github.com/OMT-Global/bootstrap",
+      "url": "https://github.com/OMT-Global/bootstrap",
+      "status": "active",
+      "featured": false,
+      "startedAt": "2026-01-01"
+    },
+    {
+      "id": "omt-gh-attest",
+      "title": "GitHub AI attestation workflow",
+      "summary": "Reusable GitHub Actions workflow for generating and signing AI attestations on commits with cosign keyless signing through OIDC.",
+      "stack": [
+        "Shell",
+        "GitHub Actions",
+        "Cosign",
+        "OIDC"
+      ],
+      "source": {
+        "label": "OMT-Global",
+        "description": "Personal and family organization"
+      },
+      "github": "https://github.com/OMT-Global/gh-attest",
+      "url": "https://github.com/OMT-Global/gh-attest",
+      "status": "active",
+      "featured": false,
+      "startedAt": "2026-03-01"
+    },
+    {
+      "id": "omt-home-tv-channel-list",
+      "title": "Home TV channel guide generator",
+      "summary": "Print-ready accordion-fold TV channel guide generator from a simple CSV file.",
+      "stack": [
+        "Python",
+        "CSV",
+        "Print Layout",
+        "Home Tooling"
+      ],
+      "source": {
+        "label": "OMT-Global",
+        "description": "Personal and family organization"
+      },
+      "github": "https://github.com/OMT-Global/home-tv-channel-list",
+      "url": "https://github.com/OMT-Global/home-tv-channel-list",
+      "status": "active",
+      "featured": false,
+      "startedAt": "2026-03-01"
     }
   ]
 }

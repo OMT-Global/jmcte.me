@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | JMCTE"
   },
   description:
-    "Professional portfolio for John McChesney TenEyck Jr., focused on reliable systems, practical engineering, and infrastructure."
+    "Executive technology portfolio for John McChesney TenEyck Jr., a CIO and CTO-level leader across enterprise architecture, infrastructure, operations, resilience, and regulated-industry modernization."
 };
 
 export default function RootLayout({

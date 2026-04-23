@@ -13,11 +13,12 @@ describe("route pages", () => {
         name: "John McChesney TenEyck Jr."
       })
     ).toBeInTheDocument();
-    expect(screen.getByText("Professional Portfolio")).toBeInTheDocument();
+    expect(screen.getByText("Executive Technology Portfolio")).toBeInTheDocument();
     expect(screen.getByText("Career trajectory")).toBeInTheDocument();
     expect(screen.getByText("Patent record")).toBeInTheDocument();
-    expect(screen.getByText("Slopmeter snapshot")).toBeInTheDocument();
-    expect(screen.getByText(/Recent focus on AI-assisted coding/i)).toBeInTheDocument();
+    expect(screen.getByText("Featured public repository")).toBeInTheDocument();
+    expect(screen.getByText("AI development activity")).toBeInTheDocument();
+    expect(screen.getByText(/Token-usage snapshot from local AI-assisted development activity/i)).toBeInTheDocument();
     expect(screen.getByAltText(/Slopmeter usage snapshot/i)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /US 12184814/i })).toHaveAttribute(
       "href",
@@ -29,7 +30,7 @@ describe("route pages", () => {
   it("renders about page content", async () => {
     render(await AboutPage());
     expect(screen.getAllByRole("heading", { name: "About" })).toHaveLength(1);
-    expect(screen.getByText(/Senior Vice President and Chief Information Officer/i)).toBeInTheDocument();
+    expect(screen.getByText(/enterprise technology executive with 25\+ years/i)).toBeInTheDocument();
   });
 
   it("renders projects page content", async () => {

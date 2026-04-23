@@ -9,6 +9,10 @@ const fixtures: (ProjectPayload & { details?: string })[] = [
     title: "Active service",
     summary: "An active system in production.",
     stack: ["TypeScript"],
+    source: {
+      label: "OMT-Global",
+      description: "Personal and family organization"
+    },
     url: "https://example.com/active-service",
     github: "https://github.com/example/active-service",
     status: "active",
@@ -20,6 +24,10 @@ const fixtures: (ProjectPayload & { details?: string })[] = [
     title: "Completed service",
     summary: "A stable and shipping product.",
     stack: ["Rust"],
+    source: {
+      label: "jmcte",
+      description: "Individual public work"
+    },
     url: "https://example.com/completed-service",
     github: "https://github.com/example/completed-service",
     status: "completed",
@@ -35,6 +43,10 @@ describe("ProjectGrid", () => {
 
     expect(screen.getByText("Active service")).toBeInTheDocument();
     expect(screen.getByText("Completed service")).toBeInTheDocument();
+    expect(screen.getAllByText("OMT-Global").length).toBeGreaterThan(0);
+    expect(screen.getByText("Personal and family organization")).toBeInTheDocument();
+    expect(screen.getAllByText("jmcte").length).toBeGreaterThan(0);
+    expect(screen.getByText("Individual public work")).toBeInTheDocument();
     expect(screen.getByRole("status")).toHaveTextContent("2 public projects shown");
     expect(screen.getByRole("link", { name: "Visit Active service" })).toHaveAttribute(
       "href",

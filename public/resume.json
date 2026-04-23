@@ -1,107 +1,131 @@
 {
-  "updatedAt": "2026-03-13T20:12:00Z",
+  "updatedAt": "2026-04-23T04:30:00Z",
   "experience": [
     {
-      "title": "Senior Vice President – Chief Information Officer, Shared Services and Infrastructure",
+      "title": "Senior Vice President, CIO – Shared Services and Infrastructure",
       "org": "USAA (San Antonio, TX)",
-      "startAt": "2023-03-01",
+      "startAt": "2023-01-01",
       "bullets": [
-        "Provides executive leadership for shared services and infrastructure technology across USAA.",
-        "Builds on prior enterprise architecture leadership to align platform direction, resilience, and delivery execution across the enterprise.",
-        "Continues a focus on secure operations, recoverability, and large-scale modernization in a regulated environment."
+        "Led engineering, infrastructure, and IT business services organization of 2,500+ resources.",
+        "Held $800M budget responsibility and PMO oversight for $100M in annual IT projects.",
+        "Ran shared services and infrastructure in a large, regulated financial-services environment with accountability for operational reliability, modernization, and execution discipline."
       ]
     },
     {
-      "title": "Vice President – Enterprise Architecture",
+      "title": "Vice President – Enterprise IT Architecture",
       "org": "USAA (San Antonio, TX)",
-      "startAt": "2015-01-01",
-      "endAt": "2023-02-28",
+      "startAt": "2015-08-01",
+      "endAt": "2023-01-31",
       "bullets": [
-        "Leads enterprise technology strategy and architecture across USAA, aligning technical direction with business goals across all divisions.",
-        "Oversees over 100 technical architects and 10 executive fellows.",
-        "Owns the SRE Center of Excellence and advanced application routing initiatives."
+        "Led enterprise architecture across USAA's multi-line business, including Life, Property & Casualty, Banking, and enterprise technology.",
+        "Set architecture direction for cloud adoption across line-of-business platforms.",
+        "Advanced machine learning and artificial intelligence applications in financial-services use cases.",
+        "Provided enterprise technology direction during a significant period of modernization and platform change."
       ]
     },
     {
-      "title": "Vice President – CIO (Interim), Property & Casualty Company",
+      "title": "CIO, Property & Casualty (Interim)",
       "org": "USAA",
-      "startAt": "2017-01-01",
-      "endAt": "2017-12-31",
+      "startAt": "2017-04-01",
+      "endAt": "2017-10-31",
       "bullets": [
-        "Served as CIO for the $20B Property & Casualty division.",
-        "Managed a $700M technology budget and a 1,200-person organization.",
-        "Launched a multi-year transformation program over $1B to modernize core P&C systems."
+        "Led 1,200+ technology resources supporting USAA's Property & Casualty business during a leadership transition.",
+        "Drove initial selection of a core-system replacement for a $20B+ direct written premium insurance company, replacing a 20-year legacy platform."
       ]
     },
     {
-      "title": "Assistant Vice President – Property & Casualty IT",
+      "title": "Assistant Vice President – P&C Systems",
       "org": "USAA",
-      "startAt": "2014-01-01",
-      "endAt": "2014-12-31",
+      "startAt": "2014-10-01",
+      "endAt": "2015-08-31",
       "bullets": [
-        "Primary IT liaison to the P&C President, improving customer-focused transformation.",
-        "Established a strategic governance model for technology delivery.",
-        "Drove stronger business alignment across teams and priorities."
+        "Led the software development organization supporting USAA's Property & Casualty business."
       ]
     },
     {
       "title": "Assistant Vice President – Quality Assurance",
       "org": "USAA",
-      "startAt": "2011-01-01",
-      "endAt": "2014-12-31",
+      "startAt": "2011-10-01",
+      "endAt": "2014-10-31",
       "bullets": [
-        "Restructured the Testing Center of Excellence for a $750M software portfolio.",
-        "Reduced testing costs by $9M and 200 FTE.",
-        "Raised delivery quality across enterprise software programs."
+        "Led a 190-employee and 950+ contractor QA organization supporting roughly $650M+ in annual software development.",
+        "Built a 3-year strategy for the QA organization and led its transition to agile development practices.",
+        "Managed $133M+ budget."
       ]
     },
     {
       "title": "Assistant Vice President – Distributed Systems & Systems Management",
       "org": "USAA",
-      "startAt": "2009-01-01",
-      "endAt": "2010-12-31",
+      "startAt": "2010-03-01",
+      "endAt": "2011-11-30",
       "bullets": [
-        "Consolidated distributed platforms and expanded data center virtualization from 40% to 80%.",
-        "Increased infrastructure capacity by 350% without cost increase."
+        "Led day-to-day operations for distributed systems, server environments, desktop support, and core operational tooling.",
+        "Managed 11 groups with 140+ employees and roughly $40M operating budget.",
+        "Achieved more than 70% datacenter virtualization and negotiated multimillion-dollar hardware and software deals that delivered more than $5M savings in 2011."
       ]
     },
     {
       "title": "Assistant Vice President – Availability Assurance",
       "org": "USAA",
-      "startAt": "2007-01-01",
-      "endAt": "2008-12-31",
+      "startAt": "2007-08-01",
+      "endAt": "2010-03-31",
       "bullets": [
-        "Improved systems reliability and operational readiness during periods of rapid organizational growth.",
-        "Built support practices focused on stability and recoverability."
+        "Built USAA's Availability Command Center, a virtual NOC spanning the United States and India, in eight months.",
+        "Led a direct team of 50 and indirect team of 600 in support of 24x7x365 operations and 1.5M+ monthly batch jobs.",
+        "Reduced return-to-service time 25% year over year and eliminated on-call schedules while maintaining round-the-clock support."
       ]
     },
     {
-      "title": "Director, Standards & Architecture / Manager, Infrastructure Applications",
+      "title": "Director, Enterprise Infrastructure Architecture and Standards Management",
       "org": "Honeywell (Phoenix, AZ)",
-      "startAt": "2004-01-01",
-      "endAt": "2007-12-31",
+      "startAt": "2006-06-01",
+      "endAt": "2007-08-31",
       "bullets": [
-        "Led standards and architecture work for infrastructure applications.",
-        "Supported enterprise modernization initiatives for operational teams."
+        "Led worldwide enterprise infrastructure architecture and standards and helped guide Honeywell's global IT technology roadmap.",
+        "Developed architecture supporting consolidation of more than 500 data centers into two global facilities.",
+        "Helped reshape a $300M global telecommunications network and established TOGAF-based enterprise architecture consistency at executive level."
       ]
     },
     {
-      "title": "Global Director, Standards & Architecture",
+      "title": "Global Leader, Infrastructure Applications",
+      "org": "Honeywell International",
+      "startAt": "2004-09-01",
+      "endAt": "2006-06-30",
+      "bullets": [
+        "Led global infrastructure application hosting, messaging, identity, and security operations for more than 100,000 users across 1,300+ facilities.",
+        "Delivered the largest Microsoft Exchange migration in company history, moving 22,000 users in three days.",
+        "Consolidated more than 400 resource domains and integrated 18 acquisitions in 12 months, generating multimillion-dollar annual savings."
+      ]
+    },
+    {
+      "title": "Director, Standards & Architecture",
       "org": "LSG Sky Chefs (Dallas, TX)",
       "startAt": "2003-01-01",
-      "endAt": "2004-12-31",
+      "endAt": "2004-09-30",
       "bullets": [
-        "Directed global standards and architectural work.",
-        "Supported scalable global systems modernization."
+        "Served as principal technical authority for global infrastructure and IT security.",
+        "Designed and led a global infrastructure refresh with EUR 8M capital budget.",
+        "Deployed MPLS across 25+ countries, cutting annual telecommunications spend 25%, and drove data-center consolidation that reduced operating costs 35%."
       ]
     },
     {
-      "title": "Senior Technical Consultant",
-      "org": "Accenture (Dallas, TX)",
-      "startAt": "2000-01-01",
+      "title": "Consultant",
+      "org": "Accenture (formerly Andersen Consulting)",
+      "startAt": "2000-12-01",
       "endAt": "2003-12-31",
       "bullets": [
-        "Provided technical consulting across enterprise initiatives in software and infrastructure domains."
+        "Led infrastructure engineering on enterprise client engagements across North and South America.",
+        "Implemented ITIL-based service-delivery organizations, managed IT RFPs exceeding EUR 25M, and led system-engineering teams through complex transformation programs."
+      ]
+    },
+    {
+      "title": "Consultant",
+      "org": "Clearview Management Consultants",
+      "startAt": "1999-01-01",
+      "endAt": "2000-12-31",
+      "bullets": [
+        "Led technical delivery on data-center, SLA, and infrastructure improvement engagements.",
+        "Delivered a data-center build-out that saved a client $1.5M annually and managed transition from IBM contract support to in-house operations."
       ]
     }
   ],
@@ -115,19 +139,24 @@
   ],
   "skills": {
     "technical": [
+      "Technology Strategy",
       "Enterprise Architecture",
+      "Technology Operations",
+      "Operational Resilience",
+      "Cloud Strategy",
+      "Digital Transformation",
       "IT Governance",
-      "Cloud Transformation",
-      "Quality Assurance",
       "Infrastructure Modernization",
-      "Distributed Systems",
-      "Digital Innovation"
+      "Artificial Intelligence",
+      "IT Financial Management"
     ],
     "tools": [
       "Enterprise Program Delivery",
       "SRE and Reliability Engineering",
       "Vendor Management",
-      "Architecture Governance"
+      "Architecture Governance",
+      "Shared Services",
+      "PMO Oversight"
     ],
     "soft": [
       "Strategic leadership",

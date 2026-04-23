@@ -84,9 +84,7 @@ export default async function ResumePage() {
           {resume.education.map((education) => (
             <Card key={education.school} className="space-y-2 p-5">
               <h4 className="text-lg font-semibold">{education.school}</h4>
-              <p className="text-sm text-muted-foreground">
-                {education.degree} · {formatDateRange(education.startAt, education.endAt)}
-              </p>
+              <p className="text-sm text-muted-foreground">{education.degree}</p>
               {education.notes ? <p className="text-sm text-muted-foreground">{education.notes}</p> : null}
             </Card>
           ))}
@@ -120,45 +118,6 @@ export default async function ResumePage() {
         </div>
       </section>
 
-      <section data-site-loader-item className="space-y-3">
-        <h3 className="text-xl font-semibold">Certifications and publications</h3>
-        <Card className="space-y-4 p-5">
-          <div>
-            <h4 className="mb-2 font-semibold">Certifications</h4>
-            <div className="space-x-2">
-              {resume.certifications.map((cert) => (
-                <Badge key={cert}>{cert}</Badge>
-              ))}
-            </div>
-          </div>
-          <div>
-            <h4 className="mb-2 font-semibold">Publications</h4>
-            <ul className="ml-5 list-disc space-y-1 text-sm text-muted-foreground">
-              {resume.publications.map((publication) => (
-                <li key={publication.title}>
-                  {publication.title} — {publication.publisher} ({publication.year})
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h4 className="mb-2 font-semibold">Links</h4>
-            <div className="space-x-2">
-              {resume.links.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-sm text-primary underline"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
-          </div>
-        </Card>
-      </section>
     </div>
   );
 }

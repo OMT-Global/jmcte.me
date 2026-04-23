@@ -13,6 +13,13 @@ function asIsoDate(value) {
   }
 }
 
+function latestIsoDate(values) {
+  return values
+    .map((value) => new Date(value).toISOString())
+    .sort()
+    .at(-1);
+}
+
 function assert(condition, message) {
   if (!condition) {
     throw new Error(message);
@@ -106,11 +113,11 @@ async function main() {
     { loc: "https://jmcte.me/resume.json", priority: "0.50" }
   ];
 
-  const now = new Date().toISOString();
+  const siteLastModified = latestIsoDate([profile.updatedAt, projects.generatedAt, resume.updatedAt]);
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">\n${sitePages
     .map(
       ({ loc, priority }) =>
-        `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${now}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>${priority}</priority>\n  </url>`
+        `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${siteLastModified}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>${priority}</priority>\n  </url>`
     )
     .join("\n")}\n</urlset>\n`;
 

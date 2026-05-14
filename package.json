@@ -18,7 +18,7 @@
   "dependencies": {
     "lucide-react": "0.562.0",
     "motion": "^12.35.1",
-    "next": "^16.1.6",
+    "next": "^16.2.6",
     "react": "19.2.3",
     "react-dom": "19.2.3"
   },
@@ -30,7 +30,7 @@
     "@types/react-dom": "19.2.3",
     "autoprefixer": "10.4.23",
     "eslint": "^9.39.2",
-    "eslint-config-next": "16.1.1",
+    "eslint-config-next": "16.2.6",
     "happy-dom": "20.0.10",
     "postcss": "8.5.6",
     "tailwindcss": "3.4.19",
